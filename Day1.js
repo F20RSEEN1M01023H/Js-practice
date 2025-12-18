@@ -39,6 +39,7 @@ console.log("Updated Info: ", info);
 // create a variable that stores null
 let futureGoal = null;
 console.log("Future Goal:", futureGoal, "Type:", typeof futureGoal);
+// and null type is object due to a bug in javascript but its originally meant to represent 'no value' and its a primitive value
 
 //create a variable that is undefined
 let undefinedValue;
@@ -46,3 +47,6 @@ console.log("Undefined Value:", undefinedValue, "Type:", typeof undefinedValue);
 
 // difference between null and undefined
 // null is the empty value while undefined means a variable has been declared but not yet assigned a value.
+
+Array.isArray(skills);
+console.log("Is skills an array?", Array.isArray(skills)); // yes true
