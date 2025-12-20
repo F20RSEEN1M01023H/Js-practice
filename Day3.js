@@ -55,3 +55,26 @@ for (const fruit of fruits) {
   }
 }
 console.log(count);
+
+// Object Loops
+// for in loop use for the objects
+
+const student = {
+  name: "Hammad",
+  age: 20,
+  city: "Rahim Yar Khan",
+  course: "MERN Stack",
+  isActive: true,
+};
+
+for (const key in student) {
+  console.log(key + ": " + student[key]);
+}
+
+let count2 = 0;
+for (const key in student) {
+  if (typeof student[key] === "string") {
+    count2++;
+  }
+}
+console.log("Number of string properties:", count2);
