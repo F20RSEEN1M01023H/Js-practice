@@ -46,3 +46,12 @@ for (let i = 0; i < fruits.length; i++) {
 for (const fruit of fruits) {
   console.log(fruit.toUpperCase());
 }
+
+//count how many fruits having more than 5 letters
+let count = 0;
+for (const fruit of fruits) {
+  if (fruit.length > 5) {
+    count++;
+  }
+}
+console.log(count);
