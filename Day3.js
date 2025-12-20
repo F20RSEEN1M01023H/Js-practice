@@ -25,3 +25,24 @@ while (i <= 100) {
   i++;
 }
 console.log("Sum of the 1 to 100 is :", sum);
+
+// using while that prints 2,4,6,8,16,32,64,128
+
+let j = 2;
+while (j <= 128) {
+  console.log(j);
+  j = j * 2;
+}
+
+// Array Loops
+// use for loop to print each fruit with its index
+const fruits = ["apple", "banana", "mango", "orange", "grapes"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(i, ":", fruits[i]);
+}
+
+//Using for off loop to print each fruit in upperCase
+
+for (const fruit of fruits) {
+  console.log(fruit.toUpperCase());
+}
