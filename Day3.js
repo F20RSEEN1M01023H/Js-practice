@@ -15,3 +15,11 @@ for (let i = 1; i <= 20; i++) {
 for (let i = 10; i >= 1; i--) {
   console.log("Reverse Numbers:", i);
 }
+
+//while loop
+//find sum of numbers from 1 to 100 using while Loop
+while (i <= 100) {
+  sum = sum + i;
+  i++;
+}
+console.log("Sum of the 1 to 100 is :", sum);
