@@ -195,3 +195,33 @@ for (let i = 1; i < numbers2.length; i++) {
   }
 }
 console.log(`Largest Number is : ${max}`);
+
+//Challenge task
+const products = [
+  { id: 1, name: "Laptop", price: 50000, inStock: true, rating: 4.5 },
+  { id: 2, name: "Phone", price: 30000, inStock: true, rating: 4.2 },
+  { id: 3, name: "Tablet", price: 25000, inStock: false, rating: 4.0 },
+  { id: 4, name: "Watch", price: 5000, inStock: true, rating: 3.8 },
+  { id: 5, name: "Headphones", price: 3000, inStock: true, rating: 4.7 },
+];
+
+//show all the products of the array
+for (const product of products) {
+  console.log(product);
+}
+
+//show only the products that will be in  the stock
+for (const product of products) {
+  if (product.inStock) {
+    console.log(product.name);
+  }
+}
+
+// prodcucts with rating > 4.0
+for (const product of products) {
+  if (product.rating > 4.0) {
+    console.log(product.name, "-", product.rating);
+  }
+}
+
+// calculate average price
