@@ -225,3 +225,30 @@ for (const product of products) {
 }
 
 // calculate average price
+let totalPrice = 0;
+
+for (const product of products) {
+  totalPrice += product.price;
+}
+let averageTotal = totalPrice / products.length;
+console.log(averageTotal);
+
+//check the most expensive product of the data
+
+let expensiveProduct = products[0];
+
+for (const product of products) {
+  if (product.price > expensiveProduct.price) {
+    expensiveProduct = product;
+  }
+}
+console.log(expensiveProduct.name, "-", expensiveProduct.price);
+
+// count how many products in stock
+let stockCount = 0;
+for (const product of products) {
+  if (product.inStock) {
+    stockCount++;
+  }
+}
+console.log("InStock products are :", stockCount);
