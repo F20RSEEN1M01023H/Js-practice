@@ -80,3 +80,62 @@ for (const key in student) {
 console.log("Number of string properties:", count2);
 
 //Break and continue
+// print numbers from 1 to 20,butt skip multiples of 3
+for (let i = 1; i <= 20; i++) {
+  if (i % 3 === 0) {
+    continue;
+  }
+
+  console.log(i);
+}
+
+// print 1 t 100 and break on 50:
+for (let i = 1; i <= 100; i++) {
+  if (i === 50) {
+    break;
+  }
+  console.log(i);
+}
+
+// Nested loops:
+// create multiplication table 1 to 10
+for (let i = 1; i <= 10; i++) {
+  for (let j = 1; j <= 10; j++) {
+    const result = i * j;
+    console.log(`${i} x ${j} = ${result}`);
+  }
+}
+
+// Real world challenge Shopping Cart
+const cart = [
+  { name: "Laptop", price: 50000, quantity: 1 },
+  { name: "Mouse", price: 500, quantity: 2 },
+  { name: "Keyboard", price: 1500, quantity: 1 },
+  { name: "Monitor", price: 15000, quantity: 2 },
+];
+
+let totalCost = 0;
+for (const item of cart) {
+  totalCost = totalCost + item.price * item.quantity;
+}
+console.log(totalCost);
+
+// Pattern Printing Challenge
+for (let i = 1; i <= 5; i++) {
+  let stars = "";
+  for (let j = 1; j <= i; j++) {
+    stars = stars + "*";
+  }
+
+  console.log(stars);
+}
+
+for (let i = 1; i <= 5; i++) {
+  let stars = "";
+  for (let j = 1; j <= i; j++) {
+    if (i % 2 !== 0) {
+      stars = stars + "*";
+    }
+  }
+  console.log(stars);
+}
