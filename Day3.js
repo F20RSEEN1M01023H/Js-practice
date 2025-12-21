@@ -78,3 +78,5 @@ for (const key in student) {
   }
 }
 console.log("Number of string properties:", count2);
+
+//Break and continue
