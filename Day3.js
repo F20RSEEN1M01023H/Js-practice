@@ -130,12 +130,68 @@ for (let i = 1; i <= 5; i++) {
   console.log(stars);
 }
 
-for (let i = 1; i <= 5; i++) {
-  let stars = "";
-  for (let j = 1; j <= i; j++) {
-    if (i % 2 !== 0) {
-      stars = stars + "*";
-    }
+// pyaramid structure of the stars by js
+
+let rows = 5;
+for (let i = 1; i <= rows; i++) {
+  let line = "";
+  // space
+  for (let s = 1; s <= rows - i; s++) {
+    line += " ";
   }
-  console.log(stars);
+  // stars print
+  for (let j = 1; j <= 2 * i - 1; j++) {
+    line += "*";
+  }
+  console.log(line);
 }
+
+// diffrence between for, while and do while loops
+// for:	considtion checkes Before	, Runs at least ones: No	best for: Known iterations
+// while:	considtion checkes Before	Runs at least ones:No,	Unknown best for:iterations
+// do...while:	considtion checkes After	Runs at least ones: Yes,	best for:Run at least once
+
+//when you would use for off or for in loops
+("You are using for of loops for the Arrays");
+("And You are using for in loops for the objects");
+
+//what happens if you forget to increment counter in a while loop?
+("The condition never becomes false.The loop runs indefinitely, causing an infinite loop. ");
+
+//Can you use break in for of loop ?
+// yes
+const numbers = [1, 2, 3, 4, 5];
+
+for (const number of numbers) {
+  if (number > 3) {
+    break;
+  }
+  console.log(number);
+}
+
+// in React which loop method do you used most often
+
+("we use .map method for arrays");
+
+// Challenges
+for (let i = 1; i <= 30; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 == 0) {
+    console.log("Fizz");
+  } else if (i % 5 == 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+// find the largest number in the array using loop
+const numbers2 = [45, 23, 89, 12, 67, 34, 91, 28];
+let max = numbers2[0];
+for (let i = 1; i < numbers2.length; i++) {
+  if (numbers2[i] > max) {
+    max = numbers2[i];
+  }
+}
+console.log(`Largest Number is : ${max}`);
