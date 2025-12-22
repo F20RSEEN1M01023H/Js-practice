@@ -190,3 +190,105 @@ function calculateTotal(price, taxRate = 0.18) {
   };
 }
 console.log(calculateTotal(1200, 0.2));
+
+// Higher order functions
+// 1.function that takes another function as parameter
+function doTwice(func, value) {
+  return [func(value), func(value)];
+}
+function square(n) {
+  return n * n;
+}
+console.log(doTwice(sqaure, 5));
+// i have done this by Ai because i have no idea about the higher order functions so thats why
+
+// function that returns another function
+function createMultiplier(multiplier) {
+  return function (number) {
+    return number * multiplier;
+  };
+}
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+
+console.log(double(5)); // 10
+console.log(triple(5)); // 15
+
+// Real World Challenge
+const products = [
+  {
+    id: 1,
+    name: "Laptop",
+    price: 50000,
+    category: "electronics",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Phone",
+    price: 30000,
+    category: "electronics",
+    inStock: true,
+  },
+  { id: 3, name: "Shirt", price: 1500, category: "clothing", inStock: false },
+  { id: 4, name: "Shoes", price: 3000, category: "clothing", inStock: true },
+  { id: 5, name: "Watch", price: 5000, category: "accessories", inStock: true },
+];
+
+function filterByCategory(products, category) {
+  const result = [];
+  for (const product of products) {
+    if (product.category === category) {
+      result.push(category);
+    }
+  }
+  return result;
+}
+console.log(filterByCategory(products, "electronics"));
+
+//function that apply discount
+function applyDiscount(products, discountPercent) {
+  const result = [];
+  for (const product of products) {
+    result.push({
+      ...product,
+      price: product.price - (product.price * discountPercent) / 100,
+    });
+  }
+  return result;
+}
+console.log(applyDiscount(products, 10));
+
+// function that calculate cart total
+function calculateCartTotal(cart) {
+  let total = 0;
+  for (const item of cart) {
+    total += item.product.price * item.quantity;
+  }
+  return total;
+}
+
+const cart = [
+  { product: products[0], quantity: 1 }, // Laptop x1
+  { product: products[1], quantity: 2 }, // Phone x2
+];
+console.log(calculateCartTotal(cart));
+
+// function that creates product summary
+function getProductSummary(products) {
+  let totalProducts = products.length;
+  let inStock = 0;
+  let totalValue = 0;
+  for (const product of products) {
+    if (product.inStock) {
+      inStock++;
+    }
+    totalValue += product.price;
+  }
+  return {
+    totalProducts,
+    inStock,
+    totalValue,
+  };
+}
+console.log(getProductSummary(products));
