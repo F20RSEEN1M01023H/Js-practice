@@ -171,3 +171,22 @@ const testProducts = [
   { name: "Tablet", inStock: true },
 ];
 console.log(countInStock(testProducts));
+
+// Function with objects
+// 1.function that creates a user object
+function createUser(name, email, age) {
+  return { name, email, age };
+}
+console.log(createUser("hammad", "hamamdchoudharry@gmail.com", 23));
+
+// 2.function that calculates the total price with tax
+
+function calculateTotal(price, taxRate = 0.18) {
+  const tax = price * taxRate;
+  return {
+    subtotal: price,
+    tax: tax,
+    total: price + tax,
+  };
+}
+console.log(calculateTotal(1200, 0.2));
