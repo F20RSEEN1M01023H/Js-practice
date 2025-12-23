@@ -16,8 +16,8 @@ for (let i = 10; i >= 1; i--) {
   console.log("Reverse Numbers:", i);
 }
 
-//while loop
-//find sum of numbers from 1 to 100 using while Loop
+// while loop
+// find sum of numbers from 1 to 100 using while Loop
 let i = 1;
 let sum = 0;
 while (i <= 100) {

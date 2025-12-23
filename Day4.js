@@ -292,3 +292,47 @@ function getProductSummary(products) {
   };
 }
 console.log(getProductSummary(products));
+
+// Problem Ecommerce Manager
+// FUNCTION 1: Get available products (stock > 0)
+const products2 = [
+  { id: 1, name: "Laptop", price: 50000, rating: 4.5, stock: 5 },
+  { id: 2, name: "Phone", price: 30000, rating: 4.2, stock: 0 },
+  { id: 3, name: "Tablet", price: 25000, rating: 4.8, stock: 10 },
+  { id: 4, name: "Headphones", price: 3000, rating: 4.0, stock: 15 },
+  { id: 5, name: "Smartwatch", price: 8000, rating: 3.9, stock: 0 },
+];
+// 1.//
+function getAvailableProducts(products2) {
+  let availableProducts = [];
+  for (const product of products2) {
+    if (product.stock > 0) {
+      availableProducts.push(product);
+    }
+  }
+  return availableProducts;
+}
+console.log(getAvailableProducts(products2));
+
+// 2.Get top rated products (rating >= 4.5)
+function topRated(products2) {
+  let topRated = [];
+  for (const product of products2) {
+    if (product.rating >= 4.5) {
+      topRated.push(product);
+    }
+  }
+  return topRated;
+}
+console.log(topRated(products2));
+
+//3.//
+function calculateInventoryValue(products2) {
+  let totalValue = 0;
+  for (const product of products2) {
+    const totalPrice = product.price * product.stock;
+    totalValue += totalPrice;
+  }
+  return totalValue;
+}
+console.log(calculateInventoryValue(products2));
