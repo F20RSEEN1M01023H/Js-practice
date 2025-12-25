@@ -245,7 +245,7 @@ console.log(categoryTag);
 
 // 4. Create product cards with rating stars
 
-const productCards = productNames.map((product) => {
+const productCards = products.map((product) => {
   const stars = "⭐".repeat(Math.floor(product.rating));
   return `${product.name} ${stars} (${product.rating})`;
 });
