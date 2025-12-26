@@ -262,4 +262,20 @@ const searchAutoComplete = products.map((product) =>
 console.log(searchAutoComplete);
 
 // Task 2: Calculate total cart value for in-stock electronics
-const totalValue = products.filter(product);
+const totalValue = products
+  .filter(
+    (product) => product.category === "electronics" && product.inStock > 0
+  )
+  .reduce((total, product) => total + product.price, 0);
+
+console.log(totalValue);
+
+// Task 3: Create discount labels
+const discountLabels = products.map((product) => {
+  if (product.price > 10000) {
+    return `Save BIG on ${product.name}`;
+  } else {
+    return product.name;
+  }
+});
+console.log(discountLabels);
