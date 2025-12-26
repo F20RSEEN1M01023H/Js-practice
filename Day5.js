@@ -318,3 +318,21 @@ const groupedByPrice = {
 };
 
 console.log(groupedByPrice);
+
+// ==========================================
+// PART 7: Performance & Best Practices
+// ==========================================
+
+// Question 1: Which is better?
+// Option A:
+const option_a = products.filter((p) => p.inStock).map((p) => p.name);
+
+// Option B:
+const option_b = [];
+for (const product of products) {
+  if (product.inStock) {
+    option_b.push(product.name);
+  }
+}
+
+// Option A is Better
