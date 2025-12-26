@@ -250,3 +250,16 @@ const productCards = products.map((product) => {
   return `${product.name} ${stars} (${product.rating})`;
 });
 console.log(productCards);
+
+// ==========================================
+// PART 6: Practice Challenge - E-Commerce
+// ==========================================
+
+// Task 1: Get all product names for search autocomplete
+const searchAutoComplete = products.map((product) =>
+  product.name.toLowerCase()
+);
+console.log(searchAutoComplete);
+
+// Task 2: Calculate total cart value for in-stock electronics
+const totalValue = products.filter(product);
