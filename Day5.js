@@ -279,3 +279,42 @@ const discountLabels = products.map((product) => {
   }
 });
 console.log(discountLabels);
+
+// Task 4: Create product summary statistics
+// Return object with:
+// {
+//   totalProducts: number,
+//   inStock: number,
+//   outOfStock: number,
+//   totalValue: number,
+//   averagePrice: number,
+//   highestPrice: number
+// }
+
+const totalProducts = products.length;
+const inStockProducts = products.filter((product) => product.inStock).length;
+const outOfStock = products.filter((product) => (product.inStock = 0));
+const totalValue2 = products.reduce((sum, product) => sum + product.price, 0);
+const averagePrice2 = products.reduce(
+  (totalValue2, product) => totalValue2 / products.length,
+  0
+);
+const highestPrice = products.reduce((max, p) => Math.max(max, p.price), 0);
+
+const summary = {
+  totalProducts,
+  inStockProducts,
+  outOfStock,
+  totalValue2,
+  averagePrice2,
+};
+
+console.log(summary);
+
+const groupedByPrice = {
+  budget: products.filter((p) => p.price < 5000),
+  mid: products.filter((p) => p.price >= 5000 && p.price <= 20000),
+  premium: products.filter((p) => p.price > 20000),
+};
+
+console.log(groupedByPrice);
