@@ -337,4 +337,37 @@ for (const product of products) {
 
 // Option A is Better
 
-const summaryProduct = products.map();
+const productSummary = {
+  // 1. Names (UPPERCASE) of all IN-STOCK products
+  availableProductNames: products
+    .filter((product) => product.inStock > 0)
+    .map((product) => product.name.toUpperCase()),
+
+  // 2. Total price of IN-STOCK ELECTRONICS
+  electronicsTotalValue: products
+    .filter((product) => product.inStock && product.category === "electronics")
+    .reduce((sum, product) => sum + product.price, 0),
+
+  // 3. Average price of all IN-STOCK products
+  averageInStockPrice: (() => {
+    const inStockProducts = products.filter((product) => product.inStock);
+    const total = inStockProducts.reduce(
+      (sum, product) => sum + product.price,
+      0
+    );
+    return total / inStockProducts.length;
+  })(),
+
+  // 4. Name of product with HIGHEST rating
+  highestRatedProductName: products.reduce((best, product) =>
+    product.rating > best.rating ? product : best
+  ).name,
+
+  // 5. Count of products per category
+  categoryCount: products.reduce((acc, product) => {
+    acc[product.category] = (acc[product.category] || 0) + 1;
+    return acc;
+  }, {}),
+};
+
+console.log(productSummary);
