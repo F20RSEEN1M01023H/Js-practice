@@ -336,3 +336,5 @@ for (const product of products) {
 }
 
 // Option A is Better
+
+const summaryProduct = products.map();
