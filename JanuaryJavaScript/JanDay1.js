@@ -144,3 +144,40 @@ let y = 10;
 // console.log(canVote);
 
 //**************** Functions **************************/
+// Function Declarations
+// function greet(name) {
+//   console.log("Hello " + name + "!");
+// }
+// greet("Hammad Ashraf");
+
+// // Function Expressions
+// const add = function (a, b) {
+//   console.log(a + b);
+// };
+// add(5, 10);
+
+// // Arrow Functions
+// const result = (x, y) => x + y;
+// console.log(result(7, 3));
+
+// Anonymous Functions
+// setTimeout(function () {
+//   console.log("This is an anonymous function executed after 2 seconds");
+// }, 2000);
+
+// Default Parameters
+// function greet(name = "Hammad") {
+//   console.log("Hello " + name + "!");
+// }
+// greet();
+
+// Callback Functions
+// function fetchDataa(Callback) {
+//   console.log("hello");
+//   Callback();
+// }
+// function displayData() {
+//   console.log("you can Display your data here!");
+// }
+
+// fetchDataa(displayData);
