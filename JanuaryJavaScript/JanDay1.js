@@ -79,7 +79,20 @@ let convertedStr = String(str); // converting number to string
 console.log(convertedStr, typeof convertedStr);
 
 //    =>2.Type Coercion (automatically converting one data type to another)
-let result = "Hello Hammad" + 23; // number 23 is coerced to string
-console.log(result, typeof result);
-let subResult = "100" - 50; // string "100" is coerced to number
-console.log(subResult, typeof subResult);
+
+// let result = "Hello Hammad" + 23; // number 23 is coerced to string
+// console.log(result, typeof result);
+// let subResult = "100" - 50; // string "100" is coerced to number
+// console.log(subResult, typeof subResult);
+// let mulResult = "5" * "4"; // both strings are coerced to numbers
+// console.log(mulResult, typeof mulResult);
+// let divResult = "20" / "4";
+// console.log(divResult, typeof divResult);
+// let some = "Hammad" * 3;
+// console.log(some, typeof some);
+// let bool = "true" + 1;
+// console.log(bool, typeof bool);
+// let bool2 = "false" * 1;
+// console.log(bool2, typeof bool2);
+
+//
