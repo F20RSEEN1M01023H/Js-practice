@@ -68,3 +68,18 @@ function greet() {
   console.log("Hello", typeof greet);
 }
 greet();
+
+// ***************** Type Conversion and Coercion ***************************
+//   =>1.Type Conversion (manually converting one data type to another)
+let num = "100";
+let convertedNum = Number(num); // converting string to number
+console.log(convertedNum, typeof convertedNum);
+let str = 50;
+let convertedStr = String(str); // converting number to string
+console.log(convertedStr, typeof convertedStr);
+
+//    =>2.Type Coercion (automatically converting one data type to another)
+let result = "Hello Hammad" + 23; // number 23 is coerced to string
+console.log(result, typeof result);
+let subResult = "100" - 50; // string "100" is coerced to number
+console.log(subResult, typeof subResult);
