@@ -20,7 +20,7 @@ city = "Chicago"; // this is reassignment and this is allowed using var keyword.
 
 //=>2.Hoisting
 // hoisting is the javscript move the decalaration to the top of the scope.
-console.log(name);
+// console.log(name);
 var name = "John Doe"; // this will give undefined because of the hoisting in var keyword.
 
 // console.log(y); // Error! (let/const not accessible before declaration)
@@ -29,54 +29,54 @@ let y = 10;
 // *************************** Data Types in JavaScript ***************************
 // 1. Primitive Data Types
 //    =>1.string (names, messages , texts)
-let firstName = "Hammad";
-console.log(typeof firstName);
-//    =>2.Number (integers and the floating point numbers)
-let score = 220;
-let temperature = 36.5;
-console.log(typeof temperature);
-//    =>3.Boolean(true/false)
-let isLoggedIn = true;
-let isAdmin = false;
-console.log(typeof isAdmin);
-//    =>4.Undefined (variable is decalared butt does not have any value assign to it))
-let address;
-console.log(typeof address);
-//    =>5.Null (means empty value)
-let middleName = null;
-console.log(typeof middleName);
-//    =>6.symbol (used to create unique identifiers for objects)
-let id = Symbol("id");
-console.log(typeof id);
-//    =>7.BigInt (used to represent integers larger than 2^53)
-let bigNumber = BigInt(123456789012345678901234567890);
-console.log(typeof bigNumber);
+// let firstName = "Hammad";
+// console.log(typeof firstName);
+// //    =>2.Number (integers and the floating point numbers)
+// let score = 220;
+// let temperature = 36.5;
+// console.log(typeof temperature);
+// //    =>3.Boolean(true/false)
+// let isLoggedIn = true;
+// let isAdmin = false;
+// console.log(typeof isAdmin);
+// //    =>4.Undefined (variable is decalared butt does not have any value assign to it))
+// let address;
+// console.log(typeof address);
+// //    =>5.Null (means empty value)
+// let middleName = null;
+// console.log(typeof middleName);
+// //    =>6.symbol (used to create unique identifiers for objects)
+// let id = Symbol("id");
+// console.log(typeof id);
+// //    =>7.BigInt (used to represent integers larger than 2^53)
+// let bigNumber = BigInt(123456789012345678901234567890);
+// console.log(typeof bigNumber);
 
 // 2. Non-Primitive Data Types( Reference Data Types)
 //    =>1.Object(used to store collections of data and more complex entities)
-let person = {
-  name: "Ali",
-  age: 30,
-  isEployed: true,
-};
-console.log(typeof person);
-//    =>2.Array(used to store multiple values in a sigle array)
-const fruits = ["apple", "banana", "mangoe", "orange"];
-console.log(fruits, typeof fruits);
+// let person = {
+//   name: "Ali",
+//   age: 30,
+//   isEployed: true,
+// };
+// console.log(typeof person);
+// //    =>2.Array(used to store multiple values in a sigle array)
+// const fruits = ["apple", "banana", "mangoe", "orange"];
+// console.log(fruits, typeof fruits);
 
-function greet() {
-  console.log("Hello", typeof greet);
-}
-greet();
+// function greet() {
+//   console.log("Hello", typeof greet);
+// }
+// greet();
 
 // ***************** Type Conversion and Coercion ***************************
 //   =>1.Type Conversion (manually converting one data type to another)
-let num = "100";
-let convertedNum = Number(num); // converting string to number
-console.log(convertedNum, typeof convertedNum);
-let str = 50;
-let convertedStr = String(str); // converting number to string
-console.log(convertedStr, typeof convertedStr);
+// let num = "100";
+// let convertedNum = Number(num); // converting string to number
+// console.log(convertedNum, typeof convertedNum);
+// let str = 50;
+// let convertedStr = String(str); // converting number to string
+// console.log(convertedStr, typeof convertedStr);
 
 //    =>2.Type Coercion (automatically converting one data type to another)
 
@@ -95,4 +95,44 @@ console.log(convertedStr, typeof convertedStr);
 // let bool2 = "false" * 1;
 // console.log(bool2, typeof bool2);
 
-//
+// ************************** Operators in JavaScript ***************************
+// 1.Arthematic Operators
+// let a = 10;
+// let b = 15;
+// console.log("a+b =", a + b);
+// console.log("a*b =", a * b);
+// console.log("a-b =", a - b);
+// console.log("a/b =", a / b);
+// console.log("a%b =", a % b);
+// console.log("a**b =", a ** b);
+
+// 2.Assignment Operators
+// let c = 20;
+// c += 5;
+// console.log("c += 5 :", c);
+// c -= 5;
+// console.log("c -= 5 :", c);
+// c *= 5;
+// console.log("c *= 5 :", c);
+// c /= 5;
+// console.log("c /= 5 :", c);
+
+// 3.Comparison Operators
+// console.log(5 == "5");
+// console.log(5 === "5");
+// console.log(5 != "5");
+// console.log(5 !== "5");
+// console.log(10 > 5);
+// console.log(10 <= 10);
+
+// 4.Logical Operators
+// console.log(true && false);
+// console.log(true || false);
+// console.log(!true);
+
+// 5.Unary Operators
+// let count = 5;
+// count++;
+// console.log(count);
+// count--;
+// console.log(count);
