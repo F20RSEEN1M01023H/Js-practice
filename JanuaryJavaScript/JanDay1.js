@@ -181,3 +181,145 @@ let y = 10;
 // }
 
 // fetchDataa(displayData);
+
+// *************************** End of Day 1 of January JavaScript Challenge ***************************
+
+// practice Questions
+// Problem 1: Variable Swap(a=5, b=10) => after swap (a=10, b=5)
+// function swapVar(a, b) {
+//   a = a + b;
+//   b = a - b;
+//   a = a - b;
+//   console.log("a =", a, "b =", b);
+// }
+// swapVar(5, 10);
+
+// // Problem 2: Type Detective Create a function that takes any input and returns an object with:
+// - The value
+// - Its type
+// - Whether it's truthy or falsy
+// function typeDetective(input) {
+//   console.log(
+//     "value =",
+//     input,
+//     "typeof =",
+//     typeof input,
+//     "truthy/falsy =",
+//     Boolean(input),
+//   );
+// }
+// typeDetective(0);
+// typeDetective("Hello");
+// typeDetective(null);
+// typeDetective(42);
+
+// Level 2: Operators (Medium)
+// Problem 3: Calculator Function
+// Build a calculator function that takes two numbers and an operator string.
+// Input: calculate(10, 5, '+')
+// function calculator(num1, num2, operator) {
+//   let result;
+//   if (operator === "+") {
+//     result = num1 + num2;
+//   } else if (operator === "-") {
+//     result = num1 - num2;
+//   } else if (operator === "*") {
+//     result = num1 * num2;
+//   } else if (operator === "/") {
+//     result = num1 / num2;
+//   } else {
+//     result = "Invalid operator";
+//   }
+//   console.log("Result =", result);
+// }
+// calculator(10, 5, "+");
+// calculator(10, 5, "-");
+// calculator(10, 5, "*");
+// calculator(10, 5, "/");
+
+// Problem 4: Grade Evaluator
+// Write a function using ternary operators to assign grades:
+// 90-100: 'A'
+// 80-89: 'B'
+// 70-79: 'C'
+// 60-69: 'D'
+// Below 60: 'F'
+
+// function gradeEvaluator(score) {
+//   const grade =
+//     score >= 90
+//       ? "A"
+//       : score >= 80
+//         ? "B"
+//         : score >= 70
+//           ? "C"
+//           : score >= 60
+//             ? "D"
+//             : "F";
+
+//   console.log("Score =", score, "Grade =", grade);
+// }
+// gradeEvaluator(95); // A
+// gradeEvaluator(85); // B
+// gradeEvaluator(75); // C
+// gradeEvaluator(65); // D
+// gradeEvaluator(55); // F
+
+// Level 3: Functions (Challenging)
+// Problem 5: Temperature Converter
+// Create functions to convert:
+// - Celsius to Fahrenheit
+// - Fahrenheit to Celsius
+// Use arrow functions and default parameters.
+// const celsiustoFarenheit = (celsius = 0) => {
+//   const Fahrenheit = (celsius * 9) / 5 + 32;
+//   return Fahrenheit;
+// };
+// const fahrenheittoCelsius = (farenheit = 32) => {
+//   const Celsius = ((farenheit - 32) * 5) / 9;
+//   return Celsius;
+// };
+// console.log("25°C to °F =", celsiustoFarenheit(25));
+// console.log("77°F to °C =", fahrenheittoCelsius(77));
+
+// Write a function to calculate factorial of a number.
+// Input: factorial(5)
+// Output: 120
+// function factorial(n) {
+//   if (n === 0 || n === 1) {
+//     return 1;
+//   } else {
+//     return n * factorial(n - 1);
+//   }
+// }
+// console.log("Factorial of 5 =", factorial(5));
+// console.log("Factorial of 0 =", factorial(0));
+// console.log("Factorial of 1 =", factorial(1));
+
+// Level 4: Combined Concepts (Advanced)
+// Problem 7: Palindrome Checker
+// Create a function that checks if a given string is a palindrome.
+function isPalindrome(str) {
+  const cleanedStr = str.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+  const reversedStr = cleanedStr.split("").reverse().join("");
+  return cleanedStr === reversedStr;
+}
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("racecar"));
+
+// Print numbers 1-100:
+// - "Fizz" for multiples of 3
+// - "Buzz" for multiples of 5
+// - "FizzBuzz" for multiples of both
+// - The number otherwise
+for (let i = 0; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
