@@ -60,3 +60,5 @@ console.log(number2);
 // Join Method
 const words = ["Hello", "World", "from", "JavaScript"];
 console.log(`Array to string with join: ${words.join(" ")}`);
+
+// Remaining many part of the js of the day 2
