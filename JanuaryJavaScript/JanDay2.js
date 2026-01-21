@@ -62,3 +62,21 @@ const words = ["Hello", "World", "from", "JavaScript"];
 console.log(`Array to string with join: ${words.join(" ")}`);
 
 // Remaining many part of the js of the day 2
+
+// Todays some practices due to house works
+// Exercise 1: Array Basics
+const fruits2 = ["apple", "banana", "orange"];
+fruits.push("mango");
+console.log(fruits);
+console.log(fruits[0]);
+console.log(fruits2.length);
+
+// Exercise 2: Simple map() practice
+const numbers2 = [1, 2, 3, 4, 5];
+const doubled = numbers2.map((num) => num * 2);
+console.log(doubled);
+
+// Exercise 3: Simple filter() practice
+const ages = [12, 18, 25, 15, 30];
+const adults = ages.filter((age) => age >= 18);
+console.log(adults);
