@@ -1,82 +1,171 @@
-// ************************ Day 2 January ***********************
-// Arrays Basics
-const fruits = ["Apple", "Banana", "Mango", "Orange"];
-console.log(`Array of Fruits : ${fruits} , Length:${fruits.length}`);
-const numbers = [10, 12, 13, 40, 50, 600];
-console.log(`Array of Numbers : ${numbers}, Length:${numbers.length}`);
-const mixedArrays = [1, "hello", true, null, { name: "John" }, [1, 2, 3]];
-console.log(`Mixed Arrays : ${mixedArrays}, Length:${mixedArrays.length}`);
+let fruits = ["appple", "banana", "mango", "orange"];
+// console.log(fruits);
 
-// Arrays Indexing
-console.log(`First Element of fruits: ${fruits[0]}`);
-console.log(`Last Element of fruits: ${fruits[fruits.length - 1]}`);
-console.log(`Second Element of numbers: ${numbers[1]}`);
-console.log(`Third Element of mixedArrays: ${mixedArrays[2]}`);
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(numbers);
 
-// Basic Methods
-// Adding Elements
-fruits.push("Grapes");
-fruits.unshift("Strawberry");
-console.log(`Fruits after adding elements: ${fruits}`);
+let mixedArray = [1, "hammad", true, null, { name: "hammad", age: 23 }];
+// console.log(mixedArray);
 
-// Removing Elements
-fruits.pop();
-fruits.shift();
-console.log(`Arrays after removing Elements: ${fruits}`);
+let usingConstructor = new Array("one", "two", "three", "four");
+// console.log(usingConstructor);
 
-//Splice Method
-// Add remove at any position
-fruits.splice(2, 0, "Pineapple"); // Adding at index 2
-console.log(`Fruits after splice add: ${fruits}`);
-fruits.splice(2, 1); // Removing at index 3
-console.log(`Fruits after splice remove: ${fruits}`);
+let nestedArray = [
+  [1, 2, 3],
+  ["a", "b", "c"],
+  [true, false, true],
+];
+// console.log(nestedArray);
 
-// Slice Method
-// copy a portion of an array and does not modify the original array
-const citrusFruits = fruits.slice(1, 3);
-console.log(`Citrus Fruits (sliced): ${citrusFruits}`);
-console.log(`Original Fruits after slice: ${fruits}`);
+let emptyArray = [];
+// console.log(emptyArray);
 
-//Concat Method(Addig 2 Arrays)
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const combinedArray = arr1.concat(arr2);
-console.log(`Combined Array: ${combinedArray}`);
+let largeArray = new Array(100).fill(10);
+// console.log(largeArray);
 
-// IndexOf Method and Includes Method
-const indexofMango = fruits.indexOf("Mango");
-console.log(`Index of Mango: ${indexofMango}`);
-// const hasBanana = fruits.includes("Banana");
-// console.log(`Include method to see you have banana: ${hasBanana}`);
-console.log(
-  `Include method to see you have banana: ${fruits.includes("Gauvava")}`,
-);
+let sparseArray = [];
+sparseArray[0] = "start";
+sparseArray[5] = "middle";
+sparseArray[10] = "end";
+// console.log(sparseArray);
 
-// Reverse Method
-const number2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-number2.reverse();
-console.log(number2);
+// Array indexing
+// console.log(fruits[0]);
+// console.log(numbers[4]);
+// console.log(mixedArray[3]);
+// console.log(nestedArray[1][2]);
 
-// Join Method
-const words = ["Hello", "World", "from", "JavaScript"];
-console.log(`Array to string with join: ${words.join(" ")}`);
+// Array Length
+// console.log(fruits.length);
 
-// Remaining many part of the js of the day 2
+//Modifying Arrays
+fruits[1] = "grapes";
+// console.log(fruits);
 
-// Todays some practices due to house works
-// Exercise 1: Array Basics
-const fruits2 = ["apple", "banana", "orange"];
-fruits.push("mango");
-console.log(fruits);
-console.log(fruits[0]);
-console.log(fruits2.length);
+// Basic Arrays
 
-// Exercise 2: Simple map() practice
-const numbers2 = [1, 2, 3, 4, 5];
-const doubled = numbers2.map((num) => num * 2);
+let colors = ["red", "blue", "white", "orange", "purpule"];
+
+// Push
+colors.push("NavyBlue");
+// console.log(colors);
+
+// Pop
+colors.pop("");
+// console.log(colors);
+
+//Unshift
+colors.unshift("black");
+// console.log(colors);
+
+//Shift
+colors.shift();
+// console.log(colors);
+
+// Splice
+colors.splice(2, 1, "yellow");
+// console.log(colors);
+
+colors.splice(2, 0, "yellow");
+// console.log(colors);
+
+colors.splice(3, 2);
+// console.log(colors);
+
+// Slice
+let citrus = fruits.slice(1, 3);
+console.log(citrus);
+
+let simpleColors = colors.slice(2, 4);
+console.log(simpleColors);
+
+//Concat
+let num1 = [1, 2, 3, 4, 5];
+let num2 = [6, 7, 8, 9, 10];
+let merged = num1.concat(num2);
+console.log(merged);
+
+// indexOf
+console.log(fruits.indexOf("banana"));
+console.log(colors.indexOf("yellow"));
+console.log(merged.indexOf(7));
+
+//Includes
+console.log(fruits.includes("mango"));
+console.log(colors.includes("pink"));
+
+//Reverse
+let counting = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+counting.reverse();
+console.log(counting);
+
+//Join
+let words = ["Hello", "world", "this", "is", "JavaScript"];
+let sentence = words.join(" ");
+console.log(sentence);
+
+// Fill
+let filledArray = new Array(5).fill("filled");
+console.log(filledArray);
+
+// Sort
+let unsortedNumbers = [5, 2, 9, 1, 5, 6];
+unsortedNumbers.sort((a, b) => a - b);
+console.log(unsortedNumbers);
+
+let unsortedFruits = ["banana", "apple", "orange", "mango"];
+unsortedFruits.sort();
+console.log(unsortedFruits);
+
+// Advance Arrays Methods
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Map(Transform each element)
+let squared = arr.map((num) => num * num);
+console.log(squared);
+
+let doubled = arr.map((num) => num * 2);
 console.log(doubled);
 
-// Exercise 3: Simple filter() practice
-const ages = [12, 18, 25, 15, 30];
-const adults = ages.filter((age) => age >= 18);
+let toStrings = arr.map((num) => num.toString());
+console.log(toStrings);
+
+const users = [
+  { name: "Hammad", age: 23 },
+  { name: "Ali", age: 25 },
+  { name: "Ayesha", age: 22 },
+];
+let names = users.map((user) => user.name);
+console.log(names);
+let ages = users.map((user) => user.age);
+console.log(ages);
+
+// Filter (Filter elements based on condition)
+let evens = arr.filter((num) => num % 2 === 0);
+console.log(evens);
+
+let greaterThanFive = arr.filter((num) => num > 5);
+console.log(greaterThanFive);
+
+const users2 = [
+  { name: "hammad", age: 23 },
+  { name: "Ali", age: 24 },
+  { name: "Aysha", age: 16 },
+];
+let adults = users2.filter((user) => user.age >= 18);
 console.log(adults);
+
+// Filter by string length
+let words2 = ["hi", "hello", "hey", "goodbye"];
+let longWords = words2.filter((word) => word.length > 4);
+console.log(longWords);
+
+//Reduce array to single value
+let numbering = [1, 2, 3, 4, 5, 6, 7, 8];
+let total = numbering.reduce((total, num) => total + num, 0);
+console.log(total);
+
+// Find Maximum
+let maximum = numbering.reduce((max, num) => (num > max ? num : max));
+console.log(maximum);
