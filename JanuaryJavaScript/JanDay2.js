@@ -214,8 +214,8 @@ console.log(coloredArr);
 
 // 🔹 PART 4: slice & concat
 let numberedArr = [1, 2, 3, 4, 5, 6];
-numberedArr.slice(3, 5);
-console.log(numberedArr);
+let slicedArr = numberedArr.slice(3, 5);
+console.log(slicedArr);
 
 let arr1 = ["a", "b", "c"];
 let arr2 = ["d", "e", "f"];
@@ -271,6 +271,8 @@ console.log(str);
 let arrObj = [
   { name: "Ali", age: 20 },
   { name: "Sara", age: 25 },
+  { name: "bushra", age: 12 },
+  { name: "bilal", age: 16 },
 ];
 let nameArr = arrObj.map((p) => p.name);
 console.log(nameArr);
@@ -278,9 +280,33 @@ console.log(nameArr);
 // 🔹 PART 9: filter
 
 // Get all numbers greater than 50.
+let numbArr = [1, 2, 3, 45, 50, 51, 52, 67, 75, 85, 98, 103, 108];
+console.log(numbArr.filter((num) => num > 50));
 
 // Filter odd numbers from [1–20].
+let numbered = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
+console.log(numbered.filter((num) => num % 2 !== 0));
 
 // From users array, get users whose age is below 18.
+console.log(arrObj.filter((user) => user.age < 18));
 
 // Filter words having length exactly 4.
+
+let arrayWords = ["hello", "hey", "how", "hi", "Hammad", "Software Engineer"];
+console.log(arrayWords.filter((word) => word.length > 4));
+
+// PART 10: reduce (MOST IMPORTANT 🔥)
+
+// Find the sum of all numbers.
+let nums = [1, 2, 80, 90, 70];
+console.log(`Sum of All Nums: ${nums.reduce((sum, num) => sum + num, 0)}`);
+
+// Find the product of numbers.
+
+// Find the maximum number.
+
+// Count how many numbers are even.
+
+// Convert ["a","b","c"] into "abc" using reduce.
