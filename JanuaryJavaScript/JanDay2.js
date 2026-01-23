@@ -245,3 +245,42 @@ console.log(JsArr.join(" "));
 // Create an array of length 7 filled with 0.
 let arrFilled = new Array(7).fill(0);
 console.log(arrFilled);
+
+// 🔹 PART 7: sort
+// Sort numbers [100, 25, 1, 50, 10] correctly.
+let unsortArr = [100, 25, 1, 50, 10];
+let sortedArr = unsortArr.sort((a, b) => a - b);
+console.log(sortedArr);
+
+// Sort names alphabetically (case-sensitive).
+let alphabetsArr = ["a", "c", "d", "e", "n", "p", "l", "m", "b", "r", "g"];
+console.log(alphabetsArr.sort());
+
+// ⭐ ADVANCED ARRAY METHODS (CRITICAL)
+// 🔹 PART 8: map
+
+// Convert [1,2,3,4] into [10,20,30,40].
+let mapingArr = [1, 2, 3, 4];
+let newarr = mapingArr.map((p) => p * 10);
+console.log(newarr);
+
+// Convert an array of numbers into strings.
+let str = mapingArr.map((num) => num.toString());
+console.log(str);
+
+let arrObj = [
+  { name: "Ali", age: 20 },
+  { name: "Sara", age: 25 },
+];
+let nameArr = arrObj.map((p) => p.name);
+console.log(nameArr);
+
+// 🔹 PART 9: filter
+
+// Get all numbers greater than 50.
+
+// Filter odd numbers from [1–20].
+
+// From users array, get users whose age is below 18.
+
+// Filter words having length exactly 4.
