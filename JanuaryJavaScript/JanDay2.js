@@ -169,3 +169,32 @@ console.log(total);
 // Find Maximum
 let maximum = numbering.reduce((max, num) => (num > max ? num : max));
 console.log(maximum);
+
+//Problems practice
+// 1.
+let cities = ["ryk", "lahore", "Islamabad", "peshawar", "quetta"];
+console.log(cities[0]);
+console.log(cities[4]);
+
+//2.
+console.log(cities.splice(2, 1, "Karachi"));
+console.log(cities);
+
+// 3.From a nested array [[10,20],[30,40],[50,60]], print 40.
+let nestedArr = [
+  [10, 20],
+  [30, 40],
+  [50, 60],
+];
+console.log(nestedArr[1][1]);
+
+// PART 2: push, pop, shift, unshift
+let emptyArr = [];
+emptyArr.push(1);
+emptyArr.push(2);
+emptyArr.push(3);
+console.log(emptyArr);
+emptyArr.pop();
+console.log(emptyArr);
+
+// Add "start" at the beginning of an array using unshift, then remove it using shift.
