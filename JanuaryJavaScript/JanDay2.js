@@ -198,3 +198,50 @@ emptyArr.pop();
 console.log(emptyArr);
 
 // Add "start" at the beginning of an array using unshift, then remove it using shift.
+emptyArr.unshift("Start");
+console.log(emptyArr);
+emptyArr.shift();
+console.log(emptyArr);
+
+// 🔹 PART 3: splice (VERY IMPORTANT)
+let coloredArr = ["red", "blue", "green", "yellow"];
+coloredArr.splice(2, 1);
+console.log(coloredArr);
+coloredArr.splice(2, 0, "black", "white");
+console.log(coloredArr);
+coloredArr.splice(1, 1, "navy");
+console.log(coloredArr);
+
+// 🔹 PART 4: slice & concat
+let numberedArr = [1, 2, 3, 4, 5, 6];
+numberedArr.slice(3, 5);
+console.log(numberedArr);
+
+let arr1 = ["a", "b", "c"];
+let arr2 = ["d", "e", "f"];
+let arr3 = ["g", "h", "i"];
+
+let farr = arr1.concat(arr2).concat(arr3);
+console.log(farr);
+
+// 🔹 PART 5: indexOf & includes
+let fruitedArr = ["apple", "banana", "mangoe", "orange"];
+let MangoeInc = fruitedArr.includes("mangoe");
+console.log(MangoeInc);
+
+let givenArr = [5, 10, 15, 20];
+console.log(givenArr.indexOf(15));
+
+// 🔹 PART 6: reverse, join, fill
+// Reverse a sentence stored as words array.
+let intro = ["software", "Engineer."];
+let reversedArr = intro.reverse();
+console.log(reversedArr);
+
+// Convert ["JS","is","awesome"] into a single string.
+let JsArr = ["JS", "is", "awesome"];
+console.log(JsArr.join(" "));
+
+// Create an array of length 7 filled with 0.
+let arrFilled = new Array(7).fill(0);
+console.log(arrFilled);
