@@ -595,3 +595,9 @@ for (let i = 0; i <= 20; i++) {
   }
 }
 console.log(sum);
+
+// 🟢 Problem 2: Count Vowels
+
+// Given a string:
+
+let word = "javascript";
