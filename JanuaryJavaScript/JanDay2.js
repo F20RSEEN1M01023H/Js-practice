@@ -451,3 +451,5 @@ console.log(foundIndex);
 
 const notFoundIndex = fIndex.findIndex((num) => num > 100);
 console.log(notFoundIndex);
+
+//  6. forEach() - Execute function for each element
