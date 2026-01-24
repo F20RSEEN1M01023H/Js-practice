@@ -338,9 +338,51 @@ console.log(str2);
 // 1️⃣ Sum of odd numbers
 let numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const addedArr = numbs.reduce((acc, curr) => {
-  if (curr % 2 === 0) {
-    return curr;
+  if (curr % 2 !== 0) {
+    return acc + curr;
   }
-  return acc + curr;
+  return acc;
 }, 0);
 console.log(addedArr);
+
+// const countedNum = numbs.reduce((acc, curr) => (curr > 5 ? acc + 1 : acc), 0);
+// console.log(countedNum);
+
+const countedNum = numbs.reduce((acc, curr) => {
+  if (curr > 5) {
+    return acc + 1;
+  }
+  return acc;
+}, 0);
+console.log(countedNum);
+
+// Join characters into a word
+const charArr = ["J", "S", " ", "R", "o", "c", "k", "s"];
+const strArr = charArr.reduce((acc, curr) => {
+  return acc + curr;
+}, "");
+
+console.log(strArr);
+
+// 4️⃣ Find the minimum number
+let minArr = [30, 5, 9, 100, 2];
+const minimum = minArr.reduce(
+  (min, curr) => (curr < min ? curr : min),
+  Infinity,
+);
+console.log(minimum);
+
+let simpleNum = [1, 2, 3, 4, 5, 6];
+// const squaredArr = simpleNum.reduce(
+//   (acc, curr) => (curr % 2 === 0 ? (acc.push(curr * curr), acc) : acc),
+//   [],
+// );
+// console.log(squaredArr);
+
+const squaredArr = simpleNum.reduce((acc, curr) => {
+  if (curr % 2 === 0) {
+    return (acc.push(curr * curr), acc);
+  }
+  return acc;
+}, []);
+console.log(squaredArr);
