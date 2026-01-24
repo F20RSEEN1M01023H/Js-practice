@@ -453,3 +453,33 @@ const notFoundIndex = fIndex.findIndex((num) => num > 100);
 console.log(notFoundIndex);
 
 //  6. forEach() - Execute function for each element
+let forColors = ["red", "blue", "green"];
+
+// Basic forEach
+forColors.forEach((color, index) => {
+  console.log(`${index}:${color}`);
+});
+
+// Note: forEach doesn't return anything!
+let result = forColors.forEach((color) => color.toUpperCase());
+console.log(result); // undefined
+
+let fresult = forColors.map((color) => color.toUpperCase());
+console.log(fresult);
+
+// 🔹 7. some() - Check if at least ONE passes test
+let Somenumbers = [1, 2, 3, 4, 5, 6, 7];
+let fSomeResult = Somenumbers.some((num) => num % 2 === 0);
+console.log(fSomeResult);
+
+// Is there any number > 10?
+const greaterNum = Somenumbers.some((num) => num > 10);
+console.log(greaterNum);
+
+let someUsers = [
+  { name: "Ali", role: "user" },
+  { name: "Sara", role: "admin" },
+  { name: "Ahmed", role: "user" },
+];
+const fsomeUser = someUsers.some((user) => user.role === "admin");
+console.log(fsomeUser);
