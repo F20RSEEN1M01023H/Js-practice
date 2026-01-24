@@ -516,3 +516,53 @@ let productsSort = [
 ];
 const sortedProducts = productsSort.sort((a, b) => a.price - b.price);
 console.log(sortedProducts);
+
+// 🔹 10. flat() - Flatten nested arrays
+let nested = [1, 2, [3, 4], [5, [6, 7]], [8, 9], [10, 11]];
+console.log(nested.flat());
+console.log(nested.flat(2));
+
+// 🔹 11. flatMap() - Map then flatten
+
+let sentences = ["Hello World", "JavaScript Rocks"];
+const wordsOutput = sentences.flatMap((sentence) => sentence.split(" "));
+console.log(wordsOutput);
+
+// 🎯 CHECKPOINT 2: Advanced Methods Practice
+// Challenge: Build Data Processing System
+
+let studentsArr = [
+  { name: "Ali", marks: 85, attendance: 90 },
+  { name: "Sara", marks: 92, attendance: 95 },
+  { name: "Ahmed", marks: 78, attendance: 85 },
+  { name: "Fatima", marks: 88, attendance: 92 },
+  { name: "Zain", marks: 65, attendance: 70 },
+];
+
+// 1. Get all names
+let namestudent = studentsArr.map((user) => user.name);
+console.log(namestudent);
+
+// 2. Get students who passed (marks >= 80)
+let passed = studentsArr.filter((user) => user.marks >= 80);
+console.log(passed);
+
+// 3. Calculate average marks
+let avgMarks =
+  studentsArr.reduce((acc, curr) => curr.marks + acc, 0) / students.length;
+console.log(avgMarks);
+
+// 4. Find student with highest marks
+let topStudent = studentsArr.reduce(
+  (max, curr) => (curr.marks > max.marks ? curr : max),
+  studentsArr[0],
+);
+console.log(topStudent);
+
+// 5. Check if any student has perfect attendance (100)
+let hasPerfect = studentsArr.some((user) => user.attendance === 100);
+console.log(hasPerfect);
+
+// 6. Check if all students passed (marks >= 60)
+let allPassed = studentsArr.every((user) => user.marks >= 60);
+console.log(allPassed);
