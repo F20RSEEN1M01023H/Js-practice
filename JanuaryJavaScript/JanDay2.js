@@ -508,3 +508,11 @@ console.log(sortArrDec);
 let strnames = ["Zain", "Ali", "Sara", "Ahmed"];
 const sortString = strnames.sort();
 console.log(sortString);
+
+let productsSort = [
+  { name: "Laptop", price: 80000 },
+  { name: "Mouse", price: 1000 },
+  { name: "Monitor", price: 25000 },
+];
+const sortedProducts = productsSort.sort((a, b) => a.price - b.price);
+console.log(sortedProducts);
