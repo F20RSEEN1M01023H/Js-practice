@@ -304,9 +304,43 @@ let nums = [1, 2, 80, 90, 70];
 console.log(`Sum of All Nums: ${nums.reduce((sum, num) => sum + num, 0)}`);
 
 // Find the product of numbers.
+const product = nums.reduce((acc, curr) => acc * curr, nums[0]);
+console.log(`Product of Nums: ${product}`);
 
 // Find the maximum number.
+const maxNum = nums.reduce((max, num) => (num > max ? num : max));
+console.log(`Max Value: ${maxNum}`);
 
 // Count how many numbers are even.
+const evenCount = nums.reduce((acc, curr) => {
+  if (curr % 2 === 0) {
+    return acc + 1;
+  }
+  return acc;
+}, 0);
+console.log(evenCount);
+
+const evenCount2 = nums.reduce(
+  (acc, curr) => (curr % 2 === 0 ? acc + 1 : acc),
+  0,
+);
+console.log(evenCount2);
 
 // Convert ["a","b","c"] into "abc" using reduce.
+// in reduce you check what you want in the end
+const letters = ["a", "b", "c", "d"];
+const str2 = letters.reduce((acc, curr) => {
+  return acc + curr;
+}, "");
+console.log(str2);
+
+// problems to solve
+// 1️⃣ Sum of odd numbers
+let numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const addedArr = numbs.reduce((acc, curr) => {
+  if (curr % 2 === 0) {
+    return curr;
+  }
+  return acc + curr;
+}, 0);
+console.log(addedArr);
