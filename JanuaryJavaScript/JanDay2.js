@@ -483,3 +483,28 @@ let someUsers = [
 ];
 const fsomeUser = someUsers.some((user) => user.role === "admin");
 console.log(fsomeUser);
+
+// 🔹 8. every() - Check if ALL pass test
+let evenNums = [2, 4, 6, 8, 10];
+const everyOutput = evenNums.every((num) => num % 2 === 0);
+console.log(everyOutput);
+
+//All numbers greater than 5
+const greaterNums = evenNums.every((num) => num > 5);
+console.log(greaterNums);
+
+// 🔹 9. sort() - Sort array
+
+let sortNums = [1, 2, 3, 3, 5, 6, 8, 9, 3, 6, 8, 5, 9];
+//Ascending
+const sortArr = sortNums.sort((a, b) => a - b);
+console.log(sortArr);
+
+// Decending
+const sortArrDec = sortNums.sort((a, b) => b - a);
+console.log(sortArrDec);
+
+// Sort strings (alphabetically)
+let strnames = ["Zain", "Ali", "Sara", "Ahmed"];
+const sortString = strnames.sort();
+console.log(sortString);
