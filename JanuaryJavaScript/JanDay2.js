@@ -386,3 +386,68 @@ const squaredArr = simpleNum.reduce((acc, curr) => {
   return acc;
 }, []);
 console.log(squaredArr);
+
+// 6️⃣ Remove duplicate values
+let dup = [1, 2, 2, 3, 4, 4, 5];
+const removedup = dup.reduce((acc, curr) => {
+  if (!acc.includes(curr)) {
+    acc.push(curr);
+  }
+  return acc;
+}, []);
+console.log(removedup);
+
+// 🔹 4. find() - Find first matching element
+let numbersfind = [5, 12, 8, 130, 44];
+const found = numbersfind.find((num) => num > 10);
+console.log(found);
+
+//Not found
+const notFound = numbersfind.find((num) => num > 200);
+console.log(notFound);
+
+let findusers = [
+  { id: 1, name: "Ali" },
+  { id: 2, name: "Sara" },
+  { id: 3, name: "Ahmed" },
+];
+const foundUsers = findusers.find((user) => user.id === 2);
+console.log(foundUsers);
+
+let usersprob = [
+  { name: "Ali", age: 22, role: "user" },
+  { name: "Sara", age: 30, role: "admin" },
+  { name: "Ahmed", age: 28, role: "user" },
+  { name: "Zara", age: 35, role: "admin" },
+];
+const foundprob = usersprob.find(
+  (user) => user.age > 25 && user.role === "admin",
+);
+console.log(foundprob);
+
+let products = [
+  { name: "Laptop", price: 1000, inStock: true },
+  { name: "Phone", price: 500, inStock: false },
+  { name: "Mouse", price: 50, inStock: true },
+  { name: "Keyboard", price: 80, inStock: false },
+  { name: "USB Cable", price: 10, inStock: true },
+];
+const findProd = products.find((p) => p.price < 100 && p.inStock);
+console.log(findProd);
+
+let students = [
+  { name: "Ali", scores: [50, 65, 70] },
+  { name: "Sara", scores: [88, 76, 90] },
+  { name: "Ahmed", scores: [60, 85, 45] },
+];
+const foundstud = students.find((stud) =>
+  stud.scores.some((score) => score > 80),
+);
+console.log(foundstud);
+
+let fIndex = [1, 12, 15, 34, 67, 78];
+const foundIndex = fIndex.findIndex((num) => num > 20);
+console.log(foundIndex);
+
+const notFoundIndex = fIndex.findIndex((num) => num > 100);
+console.log(notFoundIndex);
