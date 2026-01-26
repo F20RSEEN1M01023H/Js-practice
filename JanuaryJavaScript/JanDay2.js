@@ -601,3 +601,8 @@ console.log(sum);
 // Given a string:
 
 let word = "javascript";
+let Vowels = "aeiou";
+
+for (let i = 0; i <= word.length; i++) {
+  console.log(word);
+}
