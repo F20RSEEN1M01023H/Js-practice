@@ -606,3 +606,10 @@ let Vowels = "aeiou";
 for (let i = 0; i <= word.length; i++) {
   console.log(word);
 }
+
+let word2 = "javascript";
+let Vowels3 = "aeiou";
+
+for (let i = 0; i <= word.length; i++) {
+  console.log(word);
+}
