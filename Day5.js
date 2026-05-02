@@ -72,7 +72,7 @@ console.log(ProductPrices);
 
 // 3. Use .map() to create array of strings: "Product: [name] - Rs. [price]"
 const productStrings = products.map(
-  (product) => `Product: ${product.name} - Rs. ${product.price}`
+  (product) => `Product: ${product.name} - Rs. ${product.price}`,
 );
 console.log(productStrings);
 
@@ -85,7 +85,7 @@ console.log(PricesIncreased);
 
 // 5. Use .map() to create array of objects with only id and name
 const ObjectsArray = products.map(
-  (product) => `{id: ${product.id} , name:${product.name}}`
+  (product) => `{id: ${product.id} , name:${product.name}}`,
 );
 console.log(ObjectsArray);
 
@@ -102,7 +102,7 @@ console.log(LowPrice);
 
 // 3. Get only ELECTRONICS category products
 const CategoryCheck = products.filter(
-  (product) => product.category === "electronics"
+  (product) => product.category === "electronics",
 );
 console.log(CategoryCheck);
 
@@ -112,14 +112,14 @@ console.log(RatingCheck);
 
 // 5. Get only EXPENSIVE products (price > 20000) that are IN STOCK
 const ExpensiveProducts = products.filter(
-  (product) => product.price > 20000 && product.inStock
+  (product) => product.price > 20000 && product.inStock,
 );
 console.log(ExpensiveProducts);
 
 // 6. Get only products whose name contains letter "a" or "A"
 // Hint: use .toLowerCase() and .includes()
 const CheckLetter = products.filter((product) =>
-  product.name.toLowerCase().includes("a")
+  product.name.toLowerCase().includes("a"),
 );
 console.log(CheckLetter);
 
@@ -134,21 +134,21 @@ console.log(SumAll);
 // 2. Find the HIGHEST price among all products
 const HighestPrice = products.reduce(
   (highest, product) => (product.price > highest ? product.price : highest),
-  0
+  0,
 );
 console.log(HighestPrice);
 
 // 3. Find the LOWEST price among all products
 const LowestPrice = products.reduce(
   (lowest, product) => (product.price < lowest ? product.price : lowest),
-  products[0].price
+  products[0].price,
 );
 console.log(LowestPrice);
 
 // 4. Count how many products are IN STOCK
 const CountProduct = products.reduce(
   (count, product) => (product.inStock > 0 ? count + 1 : count),
-  0
+  0,
 );
 console.log(CountProduct);
 
@@ -220,7 +220,7 @@ console.log(RatingProduct);
 
 // 1. Display products with their formatted prices
 const FormattedPrices = products.map(
-  (product) => `${product.name}: Rs. ${product.price}`
+  (product) => `${product.name}: Rs. ${product.price}`,
 );
 console.log(FormattedPrices);
 
@@ -230,7 +230,7 @@ console.log(FormattedPrices);
 const cartDisplay = products.map((product) =>
   product.inStock
     ? `✓ ${product.name} (Rs. ${product.price})`
-    : `✗ ${product.name} (Rs. ${product.price})`
+    : `✗ ${product.name} (Rs. ${product.price})`,
 );
 
 console.log(cartDisplay);
@@ -239,7 +239,7 @@ console.log(cartDisplay);
 // Output: "Laptop [electronics]"
 
 const categoryTag = products.map(
-  (product) => `${product.name} [${product.category}]`
+  (product) => `${product.name} [${product.category}]`,
 );
 console.log(categoryTag);
 
@@ -257,14 +257,14 @@ console.log(productCards);
 
 // Task 1: Get all product names for search autocomplete
 const searchAutoComplete = products.map((product) =>
-  product.name.toLowerCase()
+  product.name.toLowerCase(),
 );
 console.log(searchAutoComplete);
 
 // Task 2: Calculate total cart value for in-stock electronics
 const totalValue = products
   .filter(
-    (product) => product.category === "electronics" && product.inStock > 0
+    (product) => product.category === "electronics" && product.inStock > 0,
   )
   .reduce((total, product) => total + product.price, 0);
 
@@ -297,7 +297,7 @@ const outOfStock = products.filter((product) => (product.inStock = 0));
 const totalValue2 = products.reduce((sum, product) => sum + product.price, 0);
 const averagePrice2 = products.reduce(
   (totalValue2, product) => totalValue2 / products.length,
-  0
+  0,
 );
 const highestPrice = products.reduce((max, p) => Math.max(max, p.price), 0);
 
@@ -353,14 +353,14 @@ const productSummary = {
     const inStockProducts = products.filter((product) => product.inStock);
     const total = inStockProducts.reduce(
       (sum, product) => sum + product.price,
-      0
+      0,
     );
     return total / inStockProducts.length;
   })(),
 
   // 4. Name of product with HIGHEST rating
   highestRatedProductName: products.reduce((best, product) =>
-    product.rating > best.rating ? product : best
+    product.rating > best.rating ? product : best,
   ).name,
 
   // 5. Count of products per category
@@ -371,3 +371,36 @@ const productSummary = {
 };
 
 console.log(productSummary);
+
+// Again starting to strong concepts
+
+// Difference between let , var and const
+
+// Var is function scoped and can be redeclared and updated and gets hoisted.
+var x = 10;
+console.log(x); // 10
+var x = 20;
+console.log(x); //20
+
+// let is a blocked scope and can be reassigned but not be redeclared.
+let name = "Hammad";
+console.log(name);
+name = "Choudhary";
+console.log(name);
+
+let students = { name: "Hammad", age: 23 };
+console.log(students);
+
+students.name = "Ali";
+console.log(students);
+
+// const is a blocled scope and canot be redeclared and not reassigned but if it is an object or array we can change the properties of that object or array.
+const name2 = "Hammad";
+console.log(name2);
+// name2 = "Ali"; // This will throw an error
+const numbers5 = [1, 2, 3, 4, 5];
+console.log(numbers5);
+numbers5.push(6);
+console.log(numbers5);
+numbers5.pop();
+console.log(numbers5);
