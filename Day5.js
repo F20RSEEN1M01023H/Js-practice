@@ -404,3 +404,32 @@ numbers5.push(6);
 console.log(numbers5);
 numbers5.pop();
 console.log(numbers5);
+
+// Data Types in Javascript
+// 1.permitive data types (Stored by Value)
+// 1.String
+const namestr = "Hammad";
+console.log(namestr);
+//2.Number
+const numnm = 33;
+console.log(numnm);
+//3.Boolean
+const isStudent = true;
+console.log(isStudent);
+// 4.Null
+const nullValue = null;
+console.log(nullValue);
+// 5.Undefined
+let undefindValue;
+console.log(undefindValue);
+
+// 2.Non-Permitive and Refrence data types (Stored by refrence)
+//1.Object
+const std1 = { name: "Abdul", age: 22 };
+const std2 = std1;
+std2.name = "bhalu";
+console.log(std1);
+
+// 2.Array
+const arr = [1, 2, 3, 4, 5];
+console.log(arr);
