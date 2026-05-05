@@ -37,4 +37,9 @@ console.log(num1 != num2); // false
 console.log(num1 !== num2); // true
 
 // 4.Logical operators(&&, ||, !)
-const is
+const x = true;
+const y = false;
+console.log(x && y); // false
+console.log(x || y); // true
+console.log(!x); // false
+console.log(!y); // true
