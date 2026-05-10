@@ -1,61 +1,84 @@
-// Again starting to strong concepts
+// Java Script core concepts and logic building
 
-// Difference between let , var and const
+//Var VS Let VS Const
+// #Rule => 01: Re-declaration
+// Var
 
-// Var is function scoped and can be redeclared and updated and gets hoisted.
-var x = 10;
-console.log(x); // 10
-var x = 20;
-console.log(x); //20
+var name = "hammad";
+var name = "Ali";
+// console.log(name); // Allowed because variable allows re declaration
 
-// let is a blocked scope and can be reassigned but not be redeclared.
-let name = "Hammad";
-console.log(name);
-name = "Choudhary";
-console.log(name);
+// Let
+let book = "English";
+// let book = "Urdu";
+// console.log(book); //syntax error because book is already declared and let is not allowing re-decalaration.
 
-let students = { name: "Hammad", age: 23 };
-console.log(students);
+// Const
+const age = 23;
+// const age = 28;
+// console.log(age); //syntax error becuase const also not allowing re-declaration
 
-students.name = "Ali";
-console.log(students);
+// #Rule=>2
+// Re-Assignment
 
-// const is a blocled scope and canot be redeclared and not reassigned but if it is an object or array we can change the properties of that object or array.
-const name2 = "Hammad";
-console.log(name2);
-// name2 = "Ali"; // This will throw an error
-const numbers5 = [1, 2, 3, 4, 5];
-console.log(numbers5);
-numbers5.push(6);
-console.log(numbers5);
-numbers5.pop();
-console.log(numbers5);
+// Var
+var x = 1;
+x = 2;
+// console.log(x); //Allowing also re-assignment
 
-// Data Types in Javascript
-// 1.permitive data types (Stored by Value)
-// 1.String
-const namestr = "Hammad";
-console.log(namestr);
-//2.Number
-const numnm = 33;
-console.log(numnm);
-//3.Boolean
-const isStudent = true;
-console.log(isStudent);
-// 4.Null
-const nullValue = null;
-console.log(nullValue);
-// 5.Undefined
-let undefindValue;
-console.log(undefindValue);
+//Let
+let y = 1;
+y = 4;
+// console.log(y); //Also allowing re-assigment
 
-// 2.Non-Permitive and Refrence data types (Stored by refrence)
-//1.Object
-const std1 = { name: "Abdul", age: 22 };
-const std2 = std1;
-std2.name = "bhalu";
-console.log(std1);
+// Const
+const z = 23;
+// z = 33;
+// console.log(z); //TypeError due to assignment to constant variable
 
-// 2.Array
-const arr = [1, 2, 3, 4, 5];
-console.log(arr);
+// Rule=>3
+// #Scope
+
+// Var
+if (true) {
+  var list = "Hammad is here"; //As by this Var is functioned scope and leaked out of the box
+}
+// console.log(list);
+
+// Let
+if (true) {
+  let listLet = "Let hammad is here";
+  const listConst = "Const hammad is here";
+}
+// console.log(listLet); // As by this you see the Refrence error due to listLet is not defined bcz let is blocked scope and remain inside
+// console.log(listConst) //As by same const is also a blocked scope and remain in the block so gives ReferenceError
+
+// Data Types
+// #Permitive Data types
+// 1.String (Any chracters in quotes single , double or backticks that is call string data typeof.)
+// 2.Number(Any numbers and NaN=> not a number and Infinity=> divide by 0)
+// 3.Boolean(True or false values like coparison like 5>3)
+// 4.Null(Null is the intentionaly empty set value to null means i know no value set)
+// 5.Undefined(Only declared variable no value assigned.)
+// 6.Symbol(means uniuqe identifier use for the id )
+// 7.BigInt(means the larger number with n and having numbers larger than number )
+
+//#Non-permitive Data types
+// Objects (Key value pairs like {name:"hammad", age:23})
+
+// Typeof
+
+// console.log(typeof "hello");
+// console.log(typeof 56);
+// console.log(typeof 3.14);
+// console.log(typeof true);
+// console.log(typeof null);
+// console.log(typeof undefined);
+// console.log(typeof {});
+// console.log(typeof []);
+// console.log(typeof function () {});
+// console.log(typeof Symbol());
+// console.log(typeof 678n);
+// console.log(typeof null === "object");
+
+// Concept 4 — Truthy & Falsy Values
