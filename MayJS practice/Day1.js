@@ -226,3 +226,33 @@ if (true) {
 // 3.const c = 30; console.log(typeof c); // Type is number .
 
 // 4.const user = { name: "Ali" }; user.name = "Sara"; console.log(user.name); //Sara bcz name will reassign in object property.
+
+// Problem # 2
+
+// Part A — truthy/falsy
+
+// console.log(Boolean(0)); // false
+
+// console.log(Boolean("")); // false
+
+// console.log(Boolean("0")); //true
+
+// console.log(Boolean([])); // true
+
+// console.log(Boolean(null)); // false
+
+// console.log(Boolean(undefined)); // false
+
+// console.log(Boolean(-1)); //true
+
+//  Part B — typeof console.log(typeof null); // object
+
+//  console.log(typeof []); // object
+
+//  console.log(typeof NaN); // number
+
+//  console.log(typeof undefined); // undefined
+
+// // Part C — predict the if/else result
+
+// const score = 0; if (score) { console.log("Has score"); } else { console.log("No score");} // else will run bcz of 0 in if does not runs the condition
