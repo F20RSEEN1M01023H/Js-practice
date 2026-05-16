@@ -256,3 +256,34 @@ if (true) {
 // // Part C — predict the if/else result
 
 // const score = 0; if (score) { console.log("Has score"); } else { console.log("No score");} // else will run bcz of 0 in if does not runs the condition
+
+// problem # 3
+
+// const value = "0";
+
+// const count = 0;
+
+//  const user = null;
+
+// console.log(Boolean(value));// true
+
+// console.log(Boolean(count)); // false
+
+// console.log(typeof user); // object
+
+// console.log(value == count); // true
+
+// console.log(value === count); // false
+
+// problem # 5
+
+// function processInput(input) {
+//     if (input) {
+//         return "Got: " + input;
+//     }
+//     return "Nothing received";
+// }
+// console.log(processInput("hello"));  // Got hello prints this bcz input having
+// console.log(processInput(""));       // Nothing Recieved
+// console.log(processInput(0));        // Nothing Recieved
+// console.log(processInput("0"));      //  Got 0
