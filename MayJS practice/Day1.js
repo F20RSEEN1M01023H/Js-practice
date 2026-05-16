@@ -122,3 +122,34 @@ if (true) {
 //Concept 5
 // Type coercion vs conversion
 // 1.conversion
+// let yz = Number("45");
+// console.log(yz);
+// Number(""); //0
+// Number(null); //0
+// Number(undefined); //0
+// Number(true); //1
+// Number(false); //0
+// Number("348abc"); //NaN
+
+// String(42)        // "42"
+// String(true)      // "true"
+// String(null)      // "null"
+
+// Boolean(0)        // false
+// Boolean("")       // false
+// Boolean("hello")  // true
+// Boolean(null)     // false
+// Boolean(1)        // true
+
+// 2.Coercion
+"5" + 3; //"53"
+"4" + null; //"4null"
+"5" + true; // "5true"
+
+"5" - 3; //2
+"5" * 3; //15
+"15" / 3; //5
+"5" - "3"; //2
+
+console.log(1 + 2 + "3"); //123
+console.log("3" + "3"); //33
