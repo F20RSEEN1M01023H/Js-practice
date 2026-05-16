@@ -142,14 +142,49 @@ if (true) {
 // Boolean(1)        // true
 
 // 2.Coercion
-"5" + 3; //"53"
-"4" + null; //"4null"
-"5" + true; // "5true"
+// "5" + 3; //"53"
+// "4" + null; //"4null"
+// "5" + true; // "5true"
 
-"5" - 3; //2
-"5" * 3; //15
-"15" / 3; //5
-"5" - "3"; //2
+// "5" - 3; //2
+// "5" * 3; //15
+// "15" / 3; //5
+// "5" - "3"; //2
 
-console.log(1 + 2 + "3"); //123
-console.log("3" + "3"); //33
+// console.log(1 + 2 + "3"); //123
+// console.log("3" + "3"); //33
+
+// Concept 6 — == vs ===
+
+// // == allows coercion — AVOID this
+// "5" == 5       // true  — string converted to number
+// 0 == false     // true  — false converted to 0
+// "" == false    // true  — both convert to 0
+// null == undefined // true — special rule
+// null == 0      // false — null only equals undefined loosely
+
+// // === strict — ALWAYS use this
+// "5" === 5      // false — different types
+// 0 === false    // false — different types
+// "" === false   // false — different types
+// null === undefined // false — different types
+
+// Concept 7 — parseInt() vs Number()
+
+// This is a common interview trick question:
+// jsNumber("42")      // 42    — works
+// Number("42abc")   // NaN   — fails, can't fully parse
+// Number("")        // 0     — empty string = 0
+// Number(" ")       // 0     — whitespace = 0
+
+// parseInt("42")    // 42    — works
+// parseInt("42abc") // 42    — takes what it can, ignores rest
+// parseInt("")      // NaN   — empty = NaN
+// parseInt("abc")   // NaN   — no number at start
+
+// // parseInt also handles different bases (radix)
+// parseInt("10", 2)  // 2  — read "10" as binary
+// parseInt("ff", 16) // 255 — read "ff" as hexadecimal
+
+// // parseFloat for decimals
+// parseFloat("3.14abc")  // 3.14
