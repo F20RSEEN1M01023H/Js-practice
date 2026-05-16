@@ -4,8 +4,8 @@
 // #Rule => 01: Re-declaration
 // Var
 
-var name = "hammad";
-var name = "Ali";
+// var name = "hammad";
+// var name = "Ali";
 // console.log(name); // Allowed because variable allows re declaration
 
 // Let
@@ -14,7 +14,7 @@ let book = "English";
 // console.log(book); //syntax error because book is already declared and let is not allowing re-decalaration.
 
 // Const
-const age = 23;
+// const age = 23;
 // const age = 28;
 // console.log(age); //syntax error becuase const also not allowing re-declaration
 
@@ -188,3 +188,15 @@ if (true) {
 
 // // parseFloat for decimals
 // parseFloat("3.14abc")  // 3.14
+
+// Concept 8 — Template Literals
+
+const name = "hammad";
+const age = 23;
+const city = "Rahim yar khan";
+
+const msg1 =
+  "My name is " + name + ", and i am " + age + " years old " + "from " + city;
+const msg2 = `My name is ${name}, i am ${age} years old from ${city}`;
+
+console.log(msg2);
