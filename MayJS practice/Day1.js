@@ -191,12 +191,38 @@ if (true) {
 
 // Concept 8 — Template Literals
 
-const name = "hammad";
-const age = 23;
-const city = "Rahim yar khan";
+// const name = "hammad";
+// const age = 23;
+// const city = "Rahim yar khan";
 
-const msg1 =
-  "My name is " + name + ", and i am " + age + " years old " + "from " + city;
-const msg2 = `My name is ${name}, i am ${age} years old from ${city}`;
+// const msg1 =
+//   "My name is " + name + ", and i am " + age + " years old " + "from " + city;
+// const msg2 = `My name is ${name}, i am ${age} years old from ${city}`;
 
-console.log(msg2);
+// console.log(msg2);
+
+// const msg3 = `Next year I'll be ${age + 1}`;
+// const msg4 = `Is adult: ${age >= 18 ? "Yes" : "No"}`;
+// const msg5 = `${name.toUpperCase()} from ${city.toLowerCase()}`;
+
+// // Multi-line strings
+// const html = `
+//   <div class="user">
+//     <h1>${name}</h1>
+//     <p>Age: ${age}</p>
+//   </div>
+// `;
+// console.log(html);
+
+// Problem #1
+
+// 1.var a=10;
+// var a=20;
+// console.log(a);// Prints 20 bcz variables accepts re-declaration so thats why
+
+// 2.let b=10;
+// let b=20; //Gives error bcz let does not allow re-declarations
+
+// 3.const c = 30; console.log(typeof c); // Type is number .
+
+// 4.const user = { name: "Ali" }; user.name = "Sara"; console.log(user.name); //Sara bcz name will reassign in object property.
