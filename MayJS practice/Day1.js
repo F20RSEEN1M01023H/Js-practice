@@ -82,3 +82,39 @@ if (true) {
 // console.log(typeof null === "object");
 
 // Concept 4 — Truthy & Falsy Values
+
+// if (false) {
+// }
+// if (0) {
+// }
+// if (NaN) {
+// }
+// if (null) {
+// }
+// if (undefined) {
+// }
+// if ("") {
+// }
+// These all are above falsy value and else from these values all are truthy
+
+// if (1)         { } // truthy
+// if ("0")       { } // truthy — "0" is a non-empty string!
+// if ([])        { } // truthy — empty array is truthy!
+// if ({})        { } // truthy — empty object is truthy!
+// if (-1)        { } // truthy — any non-zero number
+
+// Example .........
+const userInput = "";
+
+if (userInput) {
+  console.log("Got user input"); // never runs bcz the when user input nothing
+}
+
+const count = 0;
+if (count) {
+  console.log("has count"); // never runs bcz count having 0 value is a falsy
+}
+
+if (count !== null && count !== undefined) {
+  console.log("count exists", count);
+}
