@@ -78,7 +78,14 @@
 // }
 
 // Why NOT on arrays
-const arr = ["a", "b", "c"];
-for (const key in arr) {
-  console.log(key); // "0", "1", "2" ← gives INDEX as string, not value
+// const arr = ["a", "b", "c"];
+// for (const key in arr) {
+//   console.log(key); // "0", "1", "2" ← gives INDEX as string, not value
+// }
+
+// Concept 7:Nested Loops
+for (let i = 1; i <= 10; i++) {
+  for (let j = 5; j <= 5; j++) {
+    console.log(`${j} x ${i} = ${i * j}`);
+  }
 }
