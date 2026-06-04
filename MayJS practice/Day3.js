@@ -84,8 +84,28 @@
 // }
 
 // Concept 7:Nested Loops
-for (let i = 1; i <= 10; i++) {
-  for (let j = 5; j <= 5; j++) {
-    console.log(`${j} x ${i} = ${i * j}`);
+// for (let i = 1; i <= 10; i++) {
+//   for (let j = 5; j <= 5; j++) {
+//     console.log(`${j} x ${i} = ${i * j}`);
+//   }
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//   for (let j = 1; j <= 10; j++) {
+//     console.log(`${j} x ${i} = ${i * j}`);
+//   }
+// }
+
+// Lesson End Example to solve
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
   }
 }
