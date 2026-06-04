@@ -98,14 +98,32 @@
 
 // Lesson End Example to solve
 
-for (let i = 1; i <= 20; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (i % 3 === 0) {
-    console.log("Fizz");
-  } else if (i % 5 === 0) {
-    console.log("Buzz");
-  } else {
-    console.log(i);
+// for (let i = 1; i <= 20; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log("FizzBuzz");
+//   } else if (i % 3 === 0) {
+//     console.log("Fizz");
+//   } else if (i % 5 === 0) {
+//     console.log("Buzz");
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+// Examples test
+
+// 1.
+
+const scores = [10, 25, 8, 40, 15];
+
+// Without using any array method
+// Using only a for loop
+// Find and print the LARGEST number
+
+let largest = scores[0];
+for (i = 1; i < scores.length; i++) {
+  if (scores[i] > largest) {
+    largest = scores[i];
   }
 }
+console.log(largest);
