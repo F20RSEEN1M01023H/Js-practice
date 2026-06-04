@@ -72,6 +72,13 @@
 // }
 
 // Concept --6 for in loop
-user = { name: "Hammad", age: "23", Designation: "Developer" };
-for (const key in user) {
+// user = { name: "Hammad", age: "23", Designation: "Developer" };
+// for (const key in user) {
+//   console.log(`${key}:${user[key]}`);
+// }
+
+// Why NOT on arrays
+const arr = ["a", "b", "c"];
+for (const key in arr) {
+  console.log(key); // "0", "1", "2" ← gives INDEX as string, not value
 }
