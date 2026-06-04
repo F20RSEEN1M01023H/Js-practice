@@ -114,16 +114,117 @@
 
 // 1.
 
-const scores = [10, 25, 8, 40, 15];
+// const scores = [10, 25, 8, 40, 15];
 
-// Without using any array method
-// Using only a for loop
-// Find and print the LARGEST number
+// // Without using any array method
+// // Using only a for loop
+// // Find and print the LARGEST number
 
-let largest = scores[0];
-for (i = 1; i < scores.length; i++) {
-  if (scores[i] > largest) {
-    largest = scores[i];
-  }
-}
-console.log(largest);
+// let largest = scores[0];
+// for (let i = 1; i < scores.length; i++) {
+//   if (scores[i] > largest) {
+//     largest = scores[i];
+//   }
+// }
+// console.log(largest);
+
+// Q2 — while loop
+// Print numbers 1 to 10 using a while loop
+// BUT stop completely if you hit a number divisible by both 2 and 3
+
+// let count = 1;
+// while (count <= 10) {
+//   if (count % 2 === 0 && count % 3 === 0) {
+//     break;
+//   }
+//   console.log(count);
+//   count++;
+// }
+
+// Q2 — do...while
+// You have this variable:
+// let attempts = 0;
+// // Using do...while, keep incrementing attempts
+// // Stop when attempts reaches 5
+// // Print attempts after every increment
+// // How many times does the body run?
+
+// do {
+//   console.log("Print", attempts);
+//   attempts++;
+// } while (attempts < 5);
+
+// The body will be run 6 times
+
+// Q3 — break and continue
+// const numbers = [3, 7, 2, 9, 4, 11, 6, 5];
+// Loop through numbers
+// Skip any number less than 5
+// Stop completely when you find a number greater than 10
+// Print every number that passes both rules
+// for (let i = 0; i < numbers.length; i++) {
+//   if (numbers[i] < 5) {
+//     continue;
+//   }
+//   if (numbers[i] > 10) {
+//     break;
+//   }
+//   console.log(numbers[i]);
+// }
+// // with 2 methods
+
+// for (const num of numbers) {
+//   if (num < 5) {
+//     continue;
+//   }
+//   if (num > 10) {
+//     break;
+//   }
+//   console.log(num);
+// }
+// // Q4 — for...of
+// const sentence = "hello";
+// // // Loop over each character
+// // // Print each character in UPPERCASE
+// for (const char of sentence) {
+//   console.log(char.toUpperCase());
+// }
+
+// // Q5 — for...in
+// const product = {
+//   name: "Laptop",
+//   price: 150000,
+//   brand: "Dell",
+//   inStock: true,
+// };
+// // // Print every key and value like this:
+// // // "name: Laptop"
+// // // "price: 150000"
+// // // etc
+// for (const key in product) {
+//   console.log(`"${key} : ${product[key]}"`);
+// }
+
+// // Q6 — putting it together
+// const students = [
+//   { name: "Ali", grade: 55 },
+//   { name: "Sara", grade: 82 },
+//   { name: "Ahmed", grade: 40 },
+//   { name: "Zara", grade: 91 },
+// ];
+// // // Loop over students using for...of
+// // // Skip any student with grade below 50
+// // // Print: "Sara passed" / "Zara passed" etc
+// // // Stop completely after finding 2 passing students
+// let passedCount = 0;
+// for (const student of students) {
+//   if (student.grade < 50) {
+//     continue;
+//   }
+//   console.log(`${student.name} passed`);
+//   passedCount++;
+
+//   if (passedCount === 2) {
+//     break;
+//   }
+// }
