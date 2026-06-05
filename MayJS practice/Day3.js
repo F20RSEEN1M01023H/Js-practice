@@ -230,82 +230,82 @@
 // }
 
 // Scenario 1
-// You receive this from an API:
-const response = {
-  user: null,
-};
-// Safely get response.user.address.city
-// If anything is missing print "Location unknown"
-// One line only
-console.log(response.user?.adress?.city ?? "Location none");
-// so in our case  this will Location none bcz we have user null
+// // You receive this from an API:
+// const response = {
+//   user: null,
+// };
+// // Safely get response.user.address.city
+// // If anything is missing print "Location unknown"
+// // One line only
+// console.log(response.user?.adress?.city ?? "Location none");
+// // so in our case  this will Location none bcz we have user null
 
-// Scenario 2
-// A function receives a price parameter
-// price can be 0 (valid) or undefined (not provided)
-// If not provided default should be 99
-// Print "Price: X" in both cases
-// Write the complete function
-let price = 0;
-function showPrice(price) {
-  console.log("Price:", price ?? 99);
-}
+// // Scenario 2
+// // A function receives a price parameter
+// // price can be 0 (valid) or undefined (not provided)
+// // If not provided default should be 99
+// // Print "Price: X" in both cases
+// // Write the complete function
+// let price = 0;
+// function showPrice(price) {
+//   console.log("Price:", price ?? 99);
+// }
 
-// Scenario 3
-// Loop over this array
-// Skip negative numbers
-// Stop when you find a number greater than 20
-// Print every valid number
-const nums = [-3, 5, -1, 8, 12, 25, 6];
+// // Scenario 3
+// // Loop over this array
+// // Skip negative numbers
+// // Stop when you find a number greater than 20
+// // Print every valid number
+// const nums = [-3, 5, -1, 8, 12, 25, 6];
 
-for (const num of nums) {
-  if (num > 20) {
-    break;
-  }
-  if (num < 0) {
-    continue;
-  }
-  console.log(num);
-}
+// for (const num of nums) {
+//   if (num > 20) {
+//     break;
+//   }
+//   if (num < 0) {
+//     continue;
+//   }
+//   console.log(num);
+// }
 
-// Scenario 4
-// Loop over this object and print only values that are strings
-const person = {
-  name: "Ali",
-  age: 22,
-  city: "Lahore",
-  isActive: true,
-  score: 95,
-};
+// // Scenario 4
+// // Loop over this object and print only values that are strings
+// const person = {
+//   name: "Ali",
+//   age: 22,
+//   city: "Lahore",
+//   isActive: true,
+//   score: 95,
+// };
 
-for (const key in person) {
-  if (typeof person[key] !== "string") {
-    continue;
-  }
-  console.log(`${key} : ${person[key]}`);
-}
+// for (const key in person) {
+//   if (typeof person[key] !== "string") {
+//     continue;
+//   }
+//   console.log(`${key} : ${person[key]}`);
+// }
 
-// Scenario 5
-// Without using Math.max()
-// Find the largest number using a loop
-const values = [14, 3, 77, 42, 9, 55];
-let largest = values[0];
+// // Scenario 5
+// // Without using Math.max()
+// // Find the largest number using a loop
+// const values = [14, 3, 77, 42, 9, 55];
+// let largest = values[0];
 
-for (const value of values) {
-  if (value > largest) {
-    largest = value;
-  }
-}
-console.log(largest);
+// for (const value of values) {
+//   if (value > largest) {
+//     largest = value;
+//   }
+// }
+// console.log(largest);
 
-let a = 5;
-console.log(a++);
-console.log(a);
-console.log(++a);
+// let a = 5;
+// console.log(a++);
+// console.log(a);
+// console.log(++a);
 
-const username = "";
-if (username) {
-  console.log("Username:", username);
-} else {
-  console.log("No username provided");
-}
+// const username = "";
+// if (username) {
+//   console.log("Username:", username);
+// } else {
+//   console.log("No username provided");
+// }
