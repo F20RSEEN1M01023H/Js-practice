@@ -309,3 +309,53 @@
 // } else {
 //   console.log("No username provided");
 // }
+
+const employees = [
+  { name: "Ali", salary: 0, department: null },
+  { name: "Sara", salary: 85000, department: "Engineering" },
+  { name: "Ahmed", salary: 45000, department: "Marketing" },
+  { name: "Zara", salary: 92000, department: null },
+  { name: "Bilal", salary: 0, department: "Engineering" },
+];
+
+// / Task 1
+// Loop over employees
+// Print each employee's department safely
+// If department is missing print "No department"
+// Use optional chaining + nullish coalescing
+
+for (const employee of employees) {
+  console.log(employee?.department ?? "No department");
+}
+
+// / Task 2
+// Loop over employees
+// Skip anyone with salary 0
+// Stop after printing 2 valid employees
+// Print: "Sara - 85000" format
+
+let ValidEmployee = 0;
+for (const employee of employees) {
+  if (employee?.salary === 0) {
+    continue;
+  }
+  console.log(`${employee.name} - ${employee.salary}`);
+  ValidEmployee++;
+
+  if (ValidEmployee === 2) {
+    break;
+  }
+}
+
+// Task 3
+// Without any array method
+// Using only a loop
+// Count how many employees have salary above 50000
+// Print: "X employees earn above 50000"
+let salaryCount = 0;
+for (const employee of employees) {
+  if (employee.salary > 50000) {
+    salaryCount++;
+  }
+}
+console.log(salaryCount);
