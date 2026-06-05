@@ -310,52 +310,114 @@
 //   console.log("No username provided");
 // }
 
+// const employees = [
+//   { name: "Ali", salary: 0, department: null },
+//   { name: "Sara", salary: 85000, department: "Engineering" },
+//   { name: "Ahmed", salary: 45000, department: "Marketing" },
+//   { name: "Zara", salary: 92000, department: null },
+//   { name: "Bilal", salary: 0, department: "Engineering" },
+// ];
+
+// // / Task 1
+// // Loop over employees
+// // Print each employee's department safely
+// // If department is missing print "No department"
+// // Use optional chaining + nullish coalescing
+
+// for (const employee of employees) {
+//   console.log(employee?.department ?? "No department");
+// }
+
+// // / Task 2
+// // Loop over employees
+// // Skip anyone with salary 0
+// // Stop after printing 2 valid employees
+// // Print: "Sara - 85000" format
+
+// let ValidEmployee = 0;
+// for (const employee of employees) {
+//   if (employee?.salary === 0) {
+//     continue;
+//   }
+//   console.log(`${employee.name} - ${employee.salary}`);
+//   ValidEmployee++;
+
+//   if (ValidEmployee === 2) {
+//     break;
+//   }
+// }
+
+// // Task 3
+// // Without any array method
+// // Using only a loop
+// // Count how many employees have salary above 50000
+// // Print: "X employees earn above 50000"
+// let salaryCount = 0;
+// for (const employee of employees) {
+//   if (employee.salary > 50000) {
+//     salaryCount++;
+//   }
+// }
+// console.log(salaryCount);
+
+
+// Challenge 1
+// What is the output? Explain each line
+const val1 = null;
+const val2 = undefined;
+const val3 = 0;
+const val4 = "";
+
+console.log(val1 ?? "A");   => "A"
+console.log(val2 ?? "B");   =>"B"
+console.log(val3 ?? "C");   =>0 
+console.log(val4 || "D");   =>"D"
+console.log(typeof val1);   =>object
+console.log(typeof val2);   =>undeifned
+
+// Challenge 2
+// Fix this function — it has 2 bugs
+function getDiscount(price) {
+    if (price === undefined) return "No price";
+    if (price < 0) return "Invalid";
+    return "Discount: " + (price * 0.10);
+}
+// Bug 1 is in the comparison
+// Bug 2 is that price = 0 should return "Discount: 0" but doesn't
+
+// Challenge 3
+// Loop over this array
+// Build a NEW array containing only names of employees
+// whose salary is above 50000
+// Use only a for loop and push — no array methods
 const employees = [
-  { name: "Ali", salary: 0, department: null },
-  { name: "Sara", salary: 85000, department: "Engineering" },
-  { name: "Ahmed", salary: 45000, department: "Marketing" },
-  { name: "Zara", salary: 92000, department: null },
-  { name: "Bilal", salary: 0, department: "Engineering" },
+    { name: "Ali",   salary: 30000 },
+    { name: "Sara",  salary: 85000 },
+    { name: "Ahmed", salary: 92000 },
+    { name: "Zara",  salary: 45000 },
 ];
+// Expected: ["Sara", "Ahmed"]
 
-// / Task 1
-// Loop over employees
-// Print each employee's department safely
-// If department is missing print "No department"
-// Use optional chaining + nullish coalescing
+// Challenge 4
+// This object has mixed value types
+// Loop over it
+// Print ONLY keys where value is a number AND value is above 50
+const data = {
+    name: "Ali",
+    age: 22,
+    score: 88,
+    level: 3,
+    city: "Lahore",
+    rating: 91
+};
+// Expected output:
+// score: 88
+// rating: 91
 
-for (const employee of employees) {
-  console.log(employee?.department ?? "No department");
-}
-
-// / Task 2
-// Loop over employees
-// Skip anyone with salary 0
-// Stop after printing 2 valid employees
-// Print: "Sara - 85000" format
-
-let ValidEmployee = 0;
-for (const employee of employees) {
-  if (employee?.salary === 0) {
-    continue;
-  }
-  console.log(`${employee.name} - ${employee.salary}`);
-  ValidEmployee++;
-
-  if (ValidEmployee === 2) {
-    break;
-  }
-}
-
-// Task 3
-// Without any array method
-// Using only a loop
-// Count how many employees have salary above 50000
-// Print: "X employees earn above 50000"
-let salaryCount = 0;
-for (const employee of employees) {
-  if (employee.salary > 50000) {
-    salaryCount++;
-  }
-}
-console.log(salaryCount);
+// Challenge 5
+// Real interview question — write from scratch
+// A function that takes an array of numbers
+// Returns the count of positive, negative, and zero numbers
+// Example:
+// input:  [3, -1, 0, 5, -2, 0, 8]
+// output: "Positive: 3, Negative: 2, Zero: 2"
