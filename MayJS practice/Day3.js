@@ -297,3 +297,15 @@ for (const value of values) {
   }
 }
 console.log(largest);
+
+let a = 5;
+console.log(a++);
+console.log(a);
+console.log(++a);
+
+const username = "";
+if (username) {
+  console.log("Username:", username);
+} else {
+  console.log("No username provided");
+}
