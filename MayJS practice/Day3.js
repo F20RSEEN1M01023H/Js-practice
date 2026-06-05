@@ -360,64 +360,97 @@
 // }
 // console.log(salaryCount);
 
+// // Challenge 1
+// // What is the output? Explain each line
+// const val1 = null;
+// const val2 = undefined;
+// const val3 = 0;
+// const val4 = "";
 
-// Challenge 1
-// What is the output? Explain each line
-const val1 = null;
-const val2 = undefined;
-const val3 = 0;
-const val4 = "";
+// // console.log(val1 ?? "A");   => "A"
+// // console.log(val2 ?? "B");   =>"B"
+// // console.log(val3 ?? "C");   =>0
+// // console.log(val4 || "D");   =>"D"
+// // console.log(typeof val1);   =>object
+// // console.log(typeof val2);   =>undeifned
 
-console.log(val1 ?? "A");   => "A"
-console.log(val2 ?? "B");   =>"B"
-console.log(val3 ?? "C");   =>0 
-console.log(val4 || "D");   =>"D"
-console.log(typeof val1);   =>object
-console.log(typeof val2);   =>undeifned
+// // Challenge 2
+// // Fix this function — it has 2 bugs
+// function getDiscount(price) {
+//   if (price === undefined) return "No price";
+//   if (price < 0) return "Invalid";
+//   return "Discount: " + price * 0.1;
+// }
+// // Bug 1 is in the comparison
+// // Bug 2 is that price = 0 should return "Discount: 0" but doesn't
 
-// Challenge 2
-// Fix this function — it has 2 bugs
-function getDiscount(price) {
-    if (price === undefined) return "No price";
-    if (price < 0) return "Invalid";
-    return "Discount: " + (price * 0.10);
-}
-// Bug 1 is in the comparison
-// Bug 2 is that price = 0 should return "Discount: 0" but doesn't
+// // Challenge 3
+// // Loop over this array
+// // Build a NEW array containing only names of employees
+// // whose salary is above 50000
+// // Use only a for loop and push — no array methods
+// const employees = [
+//   { name: "Ali", salary: 30000 },
+//   { name: "Sara", salary: 85000 },
+//   { name: "Ahmed", salary: 92000 },
+//   { name: "Zara", salary: 45000 },
+// ];
+// // Expected: ["Sara", "Ahmed"]
 
-// Challenge 3
-// Loop over this array
-// Build a NEW array containing only names of employees
-// whose salary is above 50000
-// Use only a for loop and push — no array methods
-const employees = [
-    { name: "Ali",   salary: 30000 },
-    { name: "Sara",  salary: 85000 },
-    { name: "Ahmed", salary: 92000 },
-    { name: "Zara",  salary: 45000 },
-];
-// Expected: ["Sara", "Ahmed"]
+// const results = [];
+// for (const employee of employees) {
+//   if (employee.salary > 50000) {
+//     results.push(employee.name);
+//   }
+// }
+// console.log(results);
 
-// Challenge 4
-// This object has mixed value types
-// Loop over it
-// Print ONLY keys where value is a number AND value is above 50
-const data = {
-    name: "Ali",
-    age: 22,
-    score: 88,
-    level: 3,
-    city: "Lahore",
-    rating: 91
-};
-// Expected output:
-// score: 88
-// rating: 91
+// // Challenge 4
+// // This object has mixed value types
+// // Loop over it
+// // Print ONLY keys where value is a number AND value is above 50
+// const data = {
+//   name: "Ali",
+//   age: 22,
+//   score: 88,
+//   level: 3,
+//   city: "Lahore",
+//   rating: 91,
+// };
+// // Expected output:
+// // score: 88
+// // rating: 91
+// for (const key in data) {
+//   if (typeof data[key] !== "number" || data[key] < 50) {
+//     continue;
+//   }
+//   console.log(`${key}:${data[key]}`);
+// }
 
-// Challenge 5
-// Real interview question — write from scratch
-// A function that takes an array of numbers
-// Returns the count of positive, negative, and zero numbers
-// Example:
-// input:  [3, -1, 0, 5, -2, 0, 8]
-// output: "Positive: 3, Negative: 2, Zero: 2"
+// // Challenge 5
+// // Real interview question — write from scratch
+// // A function that takes an array of numbers
+// // Returns the count of positive, negative, and zero numbers
+// // Example:
+// // input:  [3, -1, 0, 5, -2, 0, 8]
+// // output: "Positive: 3, Negative: 2, Zero: 2"
+
+// function countNums(arr) {
+//   let positive = 0;
+//   let negative = 0;
+//   let zero = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 0) {
+//       positive++;
+//     }
+//     if (arr[i] < 0) {
+//       negative++;
+//     }
+//     if (arr[i] === 0) {
+//       zero++;
+//     }
+//   }
+//   return `Positive: ${positive}, Negative: ${negative}, Zero:${zero}`;
+// }
+// console.log(countNums([3, -1, 0, 5, -2, 0, 8]));
