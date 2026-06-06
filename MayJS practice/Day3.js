@@ -454,3 +454,27 @@
 //   return `Positive: ${positive}, Negative: ${negative}, Zero:${zero}`;
 // }
 // console.log(countNums([3, -1, 0, 5, -2, 0, 8]));
+
+// This is the simple Api integration in javaScript:
+
+// fetch("https://jsonplaceholder.typicode.com/users/1").then((response) =>
+//   response
+//     .json()
+//     .then((data) => console.log(data))
+//     .catch((error) => console.log("Something went wrong:", error)),
+// );
+
+// Now with Async and Await
+
+// async function getUser() {
+//   try {
+//     const response = await fetch(
+//       "https://jsonplaceholder.typicode.com/users/1",
+//     );
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(`Something Went Wrong: ${error}`);
+//   }
+// }
+// getUser();
