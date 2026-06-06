@@ -129,12 +129,32 @@ console.log(hi("Sundari"));
 
 // Concept 8 — Pure Functions
 
-function addu(a, b) {
+// PURE — no side effects, predictable
+function add(a, b) {
   return a + b;
 }
-console.log(addu(2, 9));
+add(2, 3); // always 5, no matter what
+add(2, 3); // always 5
+add(2, 3); // always 5
 
-//Impure function
+// IMPURE — depends on outside variable
+let tax = 0.1;
+function getPrice(price) {
+  return price + price * tax; // depends on outer 'tax'
+}
+// If tax changes, same input gives different output — unpredictable
+
+// IMPURE — modifies something outside
+const cart = [];
+function addItem(item) {
+  cart.push(item); // modifies outer array — side effect
+}
+
+// PURE version — returns new array, never mutates
+function addItem(cart, item) {
+  return [...cart, item]; // returns new array
+}
+const newCart = addItem(cart, "apple");
 
 // Concept 9 — Higher Order Functions
 // A function that takes another function as argument OR returns a function:
