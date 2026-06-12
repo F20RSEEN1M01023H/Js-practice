@@ -195,67 +195,81 @@
 // function multiply(a, b) {
 //   return a * b;
 // }
-const multiply = (a, b) => {
-  return a * b;
-};
+// const multiply = (a, b) => {
+//   return a * b;
+// };
 
-// Q3 — IIFE
-// What does this print and why?
-const result = ((a, b) => a + b)(10, 20);
-console.log(result); // =>This prints 10+20 is 30 bcz this is the immediately invoke function expression
+// // Q3 — IIFE
+// // What does this print and why?
+// const result = ((a, b) => a + b)(10, 20);
+// console.log(result); // =>This prints 10+20 is 30 bcz this is the immediately invoke function expression
 
-// Q4 — Default parameters
-// What does each line print?
-function createTag(text, tag = "p") {
-  return `<${tag}>${text}</${tag}>`;
-}
-console.log(createTag("Hello")); //=><p>Hello</p>
-console.log(createTag("Hello", "h1")); //=><h1>Hello</h1>
-console.log(createTag("Hello", null)); //=><>Hello</>
-console.log(createTag("Hello", undefined)); //=><p>Hello</p>
+// // Q4 — Default parameters
+// // What does each line print?
+// function createTag(text, tag = "p") {
+//   return `<${tag}>${text}</${tag}>`;
+// }
+// console.log(createTag("Hello")); //=><p>Hello</p>
+// console.log(createTag("Hello", "h1")); //=><h1>Hello</h1>
+// console.log(createTag("Hello", null)); //=><>Hello</>
+// console.log(createTag("Hello", undefined)); //=><p>Hello</p>
 
-// Q5 — Rest parameters
-// Write a function 'average'
-// Takes any number of arguments
-// Returns their average (sum / count)
-// average(10, 20, 30) → 20
-// average(5, 15)      → 10
+// // Q5 — Rest parameters
+// // Write a function 'average'
+// // Takes any number of arguments
+// // Returns their average (sum / count)
+// // average(10, 20, 30) → 20
+// // average(5, 15)      → 10
 
-function average(...nums) {
-  if (nums.length === 0) return 0;
+// function average(...nums) {
+//   if (nums.length === 0) return 0;
 
-  let sum = 0;
-  for (const num of nums) {
-    sum += num;
-  }
-  return sum / nums.length;
-}
-console.log(average(1, 2, 5, 6, 7, 6, 45, 67, 34));
+//   let sum = 0;
+//   for (const num of nums) {
+//     sum += num;
+//   }
+//   return sum / nums.length;
+// }
+// console.log(average(1, 2, 5, 6, 7, 6, 45, 67, 34));
 
-// Q6 — First class functions
-// What prints and why — trace each line
-function apply(fn, value) {
-  return fn(value);
-}
-const square = (n) => n * n;
-const negate = (n) => -n;
+// // Q6 — First class functions
+// // What prints and why — trace each line
+// function apply(fn, value) {
+//   return fn(value);
+// }
+// const square = (n) => n * n;
+// const negate = (n) => -n;
 
-console.log(apply(square, 5)); //=>25
-console.log(apply(negate, 5)); //=>-5
-console.log(apply((n) => n + 100, 5)); //=>105
+// console.log(apply(square, 5)); //=>25
+// console.log(apply(negate, 5)); //=>-5
+// console.log(apply((n) => n + 100, 5)); //=>105
 
-// Q7 — Pure vs Impure
-// Is this function pure or impure?
-// Give ONE reason why
-let discount = 20;
-function finalPrice(price) {
-  return price - discount;
-} //=> This is the impure functioon due to outside effect by let discount
+// // Q7 — Pure vs Impure
+// // Is this function pure or impure?
+// // Give ONE reason why
+// let discount = 20;
+// function finalPrice(price) {
+//   return price - discount;
+// } //=> This is the impure functioon due to outside effect by let discount
 
-// Q8 — Higher order functions
-// Write a function 'repeat(fn, n)'
-// It calls fn exactly n times
-// repeat(() => console.log("hello"), 3)
-// prints "hello" three times
+// // Q8 — Higher order functions
+// // Write a function 'repeat(fn, n)'
+// // It calls fn exactly n times
+// // repeat(() => console.log("hello"), 3)
+// // prints "hello" three times
 
 // "I did not understand this complete higher order function topic"
+
+const products = [
+  { name: "Phone", price: 80000, inStock: true },
+  { name: "Tablet", price: 45000, inStock: false },
+  { name: "Laptop", price: 150000, inStock: true },
+  { name: "Watch", price: 25000, inStock: false },
+  { name: "Earbuds", price: 8000, inStock: true },
+];
+
+for (const product of products) {
+  if (product.inStock) {
+    console.log(product.name);
+  }
+}
