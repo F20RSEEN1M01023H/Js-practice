@@ -273,3 +273,16 @@ for (const product of products) {
     console.log(product.name);
   }
 }
+const products = [
+  { name: "Phone", price: 80000, inStock: true },
+  { name: "Tablet", price: 45000, inStock: false },
+  { name: "Laptop", price: 150000, inStock: true },
+  { name: "Watch", price: 25000, inStock: false },
+  { name: "Earbuds", price: 8000, inStock: true },
+];
+
+for (const product of products) {
+  if (product.inStock) {
+    console.log(product.name);
+  }
+}
