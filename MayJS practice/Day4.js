@@ -260,29 +260,162 @@
 
 // "I did not understand this complete higher order function topic"
 
-const products = [
-  { name: "Phone", price: 80000, inStock: true },
-  { name: "Tablet", price: 45000, inStock: false },
-  { name: "Laptop", price: 150000, inStock: true },
-  { name: "Watch", price: 25000, inStock: false },
-  { name: "Earbuds", price: 8000, inStock: true },
-];
+//******************************* */ Functions*********************;
 
-for (const product of products) {
-  if (product.inStock) {
-    console.log(product.name);
-  }
-}
-const products = [
-  { name: "Phone", price: 80000, inStock: true },
-  { name: "Tablet", price: 45000, inStock: false },
-  { name: "Laptop", price: 150000, inStock: true },
-  { name: "Watch", price: 25000, inStock: false },
-  { name: "Earbuds", price: 8000, inStock: true },
-];
+// Q1 — What prints? Why?
+// console.log(double(4));
 
-for (const product of products) {
-  if (product.inStock) {
-    console.log(product.name);
-  }
+// var double = function (n) {
+//   return n * 2;
+// }; /// Type error because the double is not a function and function expression is not hoisted
+
+// console.log(triple(4));
+
+// function triple(n) {
+//   return n * 3;
+// } /// 12 because function declaration is the hoisted
+
+// ********************************************************
+
+// Q1 — Arrow functions
+// Convert all 3 to arrow functions with implicit return
+// function square(n) {
+//   return n * n;
+// }
+// // This converts below:
+// const sqaure = (n) => n * n;
+
+// function greet(name) {
+//   return `Hello ${name}`;
+// }
+// // This converts below:
+
+// const greet = (name) => `Hello ${name}`;
+
+// function isPositive(n) {
+//   return n > 0;
+// }
+// // This converts below:
+// const isPositive = (n) => n > 0;
+
+// // Q2 — Default parameters
+// // What prints? Explain each line
+// function register(name, role = "user", active = true) {
+//     return `${name} - ${role} - ${active}`;
+// }
+// console.log(register("Ali")); // Ali - user - true => bcz default parameter comes when no content passed
+// console.log(register("Sara", "admin"));// Sara - admin - true bcz 2 parameters passed and 1 comes default
+// console.log(register("Ahmed", undefined, false));// Ahmed - user - false => bcz deafult parmeter come when undefined
+// console.log(register("Zara", null, null));// Zara- null - null => these all given no default parmeter used
+
+// // Q3 — Rest parameters
+// // Write 'multiply' using rest
+// // First argument is the multiplier
+// // Rest are numbers to multiply
+// // multiply(2, 3, 4, 5) → [6, 8, 10]
+// // multiply(3, 1, 2, 3) → [3, 6, 9]
+
+// function multiply(multiplier, ...nums) {
+//   return nums.map((num) => num * multiplier);
+// }
+
+// Q4 — First class functions
+// What prints? Trace every line
+// const add = (a, b) => a + b;
+// const subtract = (a, b) => a - b;
+
+// function calculate(fn, a, b) {
+//   return fn(a, b);
+// }
+// console.log(calculate(add, 10, 5)); // 15
+// console.log(calculate(subtract, 10, 5)); //5
+// console.log(calculate((a, b) => a * b, 10, 5)); //50
+
+// // / Q5 — IIFE
+// // What prints?
+// const value = (() => {
+//   const x = 100;
+//   const y = 200;
+//   return x + y;
+// })();
+// console.log(value); //300
+// console.log(typeof x); //undefined
+
+// Q6 — Pure vs Impure
+// Fix this impure function — make it pure
+
+// function getTotal(price, tax = 0.17) {
+//   return price + price * tax;
+// }
+
+// Not understand
+
+// Q7 — Higher order functions
+// Write 'filter' from scratch — no .filter() allowed
+// Takes array and a test function
+// Returns new array with only items that pass the test
+// myFilter([1,2,3,4,5], n => n > 3)  → [4, 5]
+// myFilter([1,2,3,4,5], n => n % 2 === 0) → [2, 4]
+
+// Q8 — Real world
+// Write a function 'processOrders'
+// Takes an array of orders and a discount function
+// Applies discount function to each order's price
+// Returns new array of objects with discounted prices
+// Original array must NOT be mutated
+
+// const orders = [
+//   { id: 1, item: "Laptop", price: 100000 },
+//   { id: 2, item: "Mouse", price: 2000 },
+//   { id: 3, item: "Monitor", price: 50000 },
+// ];
+
+// // Call it like this:
+// // processOrders(orders, price => price * 0.9)
+// // 10% discount on all items
+// // Expected:
+// // [
+// //   { id:1, item:"Laptop",  price: 90000 },
+// //   { id:2, item:"Mouse",   price: 1800  },
+// //   { id:3, item:"Monitor", price: 45000 },
+// // ]
+
+// function processOrders(fn, ...orders) {}
+// not understand
+
+// / Q9 — Tricky
+// What prints? Explain why
+function makeCounter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
 }
+const counter = makeCounter(); //1
+console.log(counter()); //2
+console.log(counter()); //3
+console.log(counter()); //4
+
+const counter2 = makeCounter(); //1
+console.log(counter2()); //2
+
+// Q10 — Write from scratch, no help
+// A function 'pipe' that takes any number of functions
+// Applies them left to right to a value
+// pipe(double, addOne, square)(3)
+// Step 1: double(3) = 6
+// Step 2: addOne(6) = 7
+// Step 3: square(7) = 49
+// Result: 49
+
+const double2 = (n) => n * 2;
+const addOne = (n) => n + 1;
+const square2 = (n) => n * n;
+
+function pipe(double2, addOne, square2) {}
+
+// Write pipe() then call:
+// console.log(pipe(double2, addOne, square2)(3)); // 49
+
+// not understand
