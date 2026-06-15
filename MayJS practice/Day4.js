@@ -348,8 +348,6 @@
 //   return price + price * tax;
 // }
 
-// Not understand
-
 // Q7 — Higher order functions
 // Write 'filter' from scratch — no .filter() allowed
 // Takes array and a test function
@@ -357,9 +355,21 @@
 // myFilter([1,2,3,4,5], n => n > 3)  → [4, 5]
 // myFilter([1,2,3,4,5], n => n % 2 === 0) → [2, 4]
 
+// function myFilter(array, fn) {
+//   const result = [];
+//   for (const item of array) {
+//     if (fn(item)) {
+//       result.push(item);
+//     }
+//   }
+//   return result;
+// }
+// console.log(myFilter([1, 2, 3, 4, 5], (n) => n > 3));
+// console.log(myFilter([1, 2, 3, 4, 5], (n) => n % 2 === 0));
+
 // Q8 — Real world
 // Write a function 'processOrders'
-// Takes an array of orders and a discount function
+// Takes aann array of orders d a discount function
 // Applies discount function to each order's price
 // Returns new array of objects with discounted prices
 // Original array must NOT be mutated
@@ -380,25 +390,34 @@
 // //   { id:3, item:"Monitor", price: 45000 },
 // // ]
 
-// function processOrders(fn, ...orders) {}
-// not understand
+// function processOrders(orders, disfn) {
+//   const result = [];
+//   for (const order of orders) {
+//     result.push({
+//       ...orders,
+//       price: disfn(order.price),
+//     });
+//   }
+//   return result;
+// }
+// console.log(processOrders(orders, (price) => price * 0.9));
 
 // / Q9 — Tricky
 // What prints? Explain why
-function makeCounter() {
-  let count = 0;
-  return function () {
-    count++;
-    return count;
-  };
-}
-const counter = makeCounter(); //1
-console.log(counter()); //2
-console.log(counter()); //3
-console.log(counter()); //4
+// function makeCounter() {
+//   let count = 0;
+//   return function () {
+//     count++;
+//     return count;
+//   };
+// }
+// const counter = makeCounter();
+// console.log(counter()); //1
+// console.log(counter()); //2
+// console.log(counter()); //3
 
-const counter2 = makeCounter(); //1
-console.log(counter2()); //2
+// const counter2 = makeCounter();
+// console.log(counter2()); //1
 
 // Q10 — Write from scratch, no help
 // A function 'pipe' that takes any number of functions
@@ -409,13 +428,22 @@ console.log(counter2()); //2
 // Step 3: square(7) = 49
 // Result: 49
 
-const double2 = (n) => n * 2;
-const addOne = (n) => n + 1;
-const square2 = (n) => n * n;
+// const double2 = (n) => n * 2;
+// const addOne = (n) => n + 1;
+// const square2 = (n) => n * n;
 
-function pipe(double2, addOne, square2) {}
+// const double2 = (n) => n * 2;
+// const addOne = (n) => n + 1;
+// const square2 = (n) => n * n;
 
-// Write pipe() then call:
-// console.log(pipe(double2, addOne, square2)(3)); // 49
+// function pipe(...fns) {
+//   return function (value) {
+//     for (const fn of fns) {
+//       value = fn(value);
+//     }
+//     return value;
+//   };
+// }
 
-// not understand
+// // Write pipe() then call:
+// console.log(pipe(double2, addOne, square2)(3));
