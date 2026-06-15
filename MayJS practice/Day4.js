@@ -394,7 +394,7 @@
 //   const result = [];
 //   for (const order of orders) {
 //     result.push({
-//       ...orders,
+//       ...order,
 //       price: disfn(order.price),
 //     });
 //   }
