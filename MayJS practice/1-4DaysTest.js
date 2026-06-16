@@ -108,17 +108,14 @@
 // // applyDiscount([1000,2000,500], p => p * 0.9)
 // // → [900, 1800, 450]
 
-function applyDiscount(prices, disfn) {
-  const result = [];
-  for (const item of prices) {
-    result.push({
-      ...item,
-      price: disfn(item.price),
-    });
-  }
-  return result;
-}
-console.log(applyDiscount([1000, 2000, 500], (p) => p * 0.9));
+// function applyDiscount(prices, disfn) {
+//   const result = [];
+//   for (const item of prices) {
+//     result.push(disfn(item));
+//   }
+//   return result;
+// }
+// console.log(applyDiscount([1000, 2000, 500], (p) => p * 0.9));
 
 // // Q7 — What prints? Explain why
 // function make(x) {
@@ -129,30 +126,46 @@ console.log(applyDiscount([1000, 2000, 500], (p) => p * 0.9));
 // const triple = make(3);
 // const double = make(2);
 
-// console.log(triple(5));
-// console.log(double(5));
-// console.log(make(4)(5));
+// console.log(triple(5)); //15
+// console.log(double(5)); //10
+// console.log(make(4)(5)); //20
 
 // // ======= COMBINED =======
 
 // // Q8 — Real scenario — uses ALL 4 days
-// const inventory = [
-//   { name: "Phone", price: 80000, active: true, quantity: 0 },
-//   { name: "Laptop", price: 150000, active: true, quantity: 5 },
-//   { name: "Tablet", price: null, active: false, quantity: 3 },
-//   { name: "Watch", price: 25000, active: true, quantity: 2 },
-//   { name: "Earbuds", price: 8000, active: true, quantity: 0 },
-// ];
+const inventory = [
+  { name: "Phone", price: 80000, active: true, quantity: 0 },
+  { name: "Laptop", price: 150000, active: true, quantity: 5 },
+  { name: "Tablet", price: null, active: false, quantity: 3 },
+  { name: "Watch", price: 25000, active: true, quantity: 2 },
+  { name: "Earbuds", price: 8000, active: true, quantity: 0 },
+];
 
 // // Task A
 // // Loop and collect names of items that are:
 // // active AND quantity > 0
 // // Expected: ["Laptop", "Watch"]
 
+// const ActiveUsers = [];
+// for (const each of inventory) {
+//   if (each.active && each.quantity > 0) {
+//     ActiveUsers.push(each.name);
+//   }
+// }
+// console.log(ActiveUsers);
+
 // // Task B
 // // Find total value of active items (price * quantity)
 // // If price is null treat it as 0
 // // Expected: 150000*5 + 25000*2 + 8000*0 + 80000*0 = 800000
+
+// let total = 0;
+// for (const item of inventory) {
+//   if (item.active) {
+//     total += (item.price ?? 0) * item.quantity;
+//     console.log(`${item.price ?? 0}*${item.quantity} = ${total}`);
+//   }
+// }
 
 // // Task C
 // // Write a function applyTax(inventory, taxFn)
@@ -160,3 +173,15 @@ console.log(applyDiscount([1000, 2000, 500], (p) => p * 0.9));
 // // totalPrice = price * quantity (treat null price as 0)
 // // Do not mutate original
 // // Call it with: applyTax(inventory, (p, q) => (p ?? 0) * q)
+
+function applyTax(inventory, taxFn) {
+  let result = [];
+  for (const item of inventory) {
+    result.push({
+      ...item,
+      totalPrice: taxFn(item.price, item.quantity),
+    });
+  }
+  return result;
+}
+console.log(applyTax(inventory, (p, q) => (p ?? 0) * q));
