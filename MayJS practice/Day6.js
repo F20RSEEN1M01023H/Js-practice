@@ -143,12 +143,14 @@
 
 // function memoize(fn) {
 //   const cache = {};
+
 //   return function (n) {
 //     if (cache[n] !== undefined) {
-//       console.log("from caches");
+//       console.log("from cache");
 //       return cache[n];
 //     }
 //     const result = fn(n);
+//     console.log("calculated");
 //     cache[n] = result;
 //     return result;
 //   };
@@ -164,34 +166,34 @@
 
 // Problem 8 — Senior interview question
 // What prints? Explain exactly why
-function outer() {
-  let count = 0;
+// function outer() {
+//   let count = 0;
 
-  function increment() {
-    count++;
-    return count;
-  }
+//   function increment() {
+//     count++;
+//     return count;
+//   }
 
-  function decrement() {
-    count--;
-    return count;
-  }
+//   function decrement() {
+//     count--;
+//     return count;
+//   }
 
-  function getCount() {
-    return count;
-  }
+//   function getCount() {
+//     return count;
+//   }
 
-  return { increment, decrement, getCount };
-}
+//   return { increment, decrement, getCount };
+// }
 
-const obj1 = outer();
-const obj2 = outer();
+// const obj1 = outer();
+// const obj2 = outer();
 
-console.log(obj1.increment()); // 1
-console.log(obj1.increment()); // 2
-console.log(obj2.increment()); // 1
-console.log(obj1.getCount()); // 2
-console.log(obj2.getCount()); // 1
-obj1.decrement();
-console.log(obj1.getCount()); // 1
-console.log(obj2.getCount()); // 1
+// console.log(obj1.increment()); // 1
+// console.log(obj1.increment()); // 2
+// console.log(obj2.increment()); // 1
+// console.log(obj1.getCount()); // 2
+// console.log(obj2.getCount()); // 1
+// obj1.decrement();
+// console.log(obj1.getCount()); // 1
+// console.log(obj2.getCount()); // 1
