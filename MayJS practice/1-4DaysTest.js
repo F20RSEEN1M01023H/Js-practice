@@ -185,14 +185,3 @@ function applyTax(inventory, taxFn) {
   return result;
 }
 console.log(applyTax(inventory, (p, q) => (p ?? 0) * q));
-
-// Q6 — Hoisting — tricky
-// Predict output
-var score = 10;
-function getScore() {
-  console.log(score); // Q6a — careful
-  var score = 20;
-  console.log(score); // Q6b
-}
-getScore();
-console.log(score); // Q6c
