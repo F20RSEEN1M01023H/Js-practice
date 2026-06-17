@@ -197,3 +197,28 @@
 // obj1.decrement();
 // console.log(obj1.getCount()); // 1
 // console.log(obj2.getCount()); // 1
+
+// Write memoize(fn) completely from scratch
+// No looking up
+// Then test with:
+
+function memoize(fn) {
+  const cache = {};
+  return function (n) {
+    if (cache[n] !== undefined) {
+      console.log("from caches");
+      return cache[n];
+    }
+    const result = fn(n);
+    console.log("Calculated");
+    cache[n] = result;
+
+    return result;
+  };
+}
+
+const memoDouble = memoize((n) => n * 2);
+console.log(memoDouble(3)); // calculates: 6
+console.log(memoDouble(3)); // from cache: 6
+console.log(memoDouble(7)); // calculates: 14
+console.log(memoDouble(7)); // from cache: 14
