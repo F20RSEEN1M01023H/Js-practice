@@ -34,7 +34,7 @@
 
 // Q3 — Fix the bug
 // function getLabel(value) {
-//   if (value === null) return "Empty";
+//   if (value == null) return "Empty";
 //   if (value < 0) return "Negative";
 //   return "Value: " + value;
 // }
@@ -68,8 +68,8 @@
 
 // const activeUsers = [];
 // for (const user of users) {
-//   if (user.active) {
-//     activeUsers.push(user);
+//   if (user.active && age>=18) {
+//     activeUsers.push(user.name);
 //   }
 // }
 // console.log(activeUsers);
@@ -185,3 +185,14 @@ function applyTax(inventory, taxFn) {
   return result;
 }
 console.log(applyTax(inventory, (p, q) => (p ?? 0) * q));
+
+// Q6 — Hoisting — tricky
+// Predict output
+var score = 10;
+function getScore() {
+  console.log(score); // Q6a — careful
+  var score = 20;
+  console.log(score); // Q6b
+}
+getScore();
+console.log(score); // Q6c
