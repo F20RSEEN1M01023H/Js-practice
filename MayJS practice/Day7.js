@@ -59,10 +59,50 @@
 // timer.start();
 
 //Concept 4**************************** This in regular functions
-function showThis() {
-  console.log(this);
-}
+// function showThis() {
+//   console.log(this);
+// }
 
-showThis();
-const object = { showThis };
-object.showThis();
+// showThis();
+// const object = { showThis };
+// object.showThis();
+
+// Nested Regular functions
+// const user = {
+//   name: "Hami",
+//   outer() {
+//     console.log(this.name);
+
+//     function inner() {
+//       console.log(this.name);
+//     }
+//     inner();
+//   },
+// };
+
+// user.outer();
+
+// Concept 5 — this in Arrow Functions *******************
+// const user = {
+//   name: "Hammad",
+//  greetRegular() {
+//     console.log(`Regular: ${this.name}`);
+//   },
+//   Arrowfunction: () => {
+//     console.log(`Arrow: ${this.name}`);
+//   },
+//
+// };
+// user.greetRegular();
+// user.Arrowfunction();
+
+// Arrow solve the nested problem ****************
+// const timer = {
+//   message: "This is the timer Arrow",
+//   start() {
+//     setTimeout(() => {
+//       console.log(this.message);
+//     }, 1000);
+//   },
+// };
+// timer.start();
