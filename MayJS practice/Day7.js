@@ -131,3 +131,33 @@
 
 // Concept 7 — apply()******************
 // Same as call() but arguments passed as an array:
+
+// function greet(greeting, punctuation) {
+//   console.log(`${greeting} ${this.name}${punctuation}`);
+// }
+
+// const user = { name: "Hamo" };
+// greet.call(user, "Hello", "!");
+
+// // apply
+// greet.apply(user, ["Hello", "!"]);
+
+// const args = ["Hello", "!"];
+// greet.apply(user, args);
+
+// // classic Apply
+// const numbers = [3, 1, 4, 70, 55, 67, 98];
+// console.log(Math.max.apply(null, numbers));
+
+// Concept 8 — bind()
+
+function greet() {
+  console.log(`Hello ${this.name}!`);
+}
+const user = { name: "Hammad" };
+
+const boundGreet = greet.bind(user);
+boundGreet();
+
+const rebind = boundGreet.bind({ name: "Hammad Ashraf now" });
+rebind();
