@@ -106,3 +106,28 @@
 //   },
 // };
 // timer.start();
+
+// Concept 6 — call()************************
+// Lets you call a function with a custom this:
+// function greet(greeting, punctuation) {
+//   console.log(`${greeting} ${this.name}${punctuation}`);
+// }
+// const user1 = { name: "Ali" };
+// const user2 = { name: "Hammad" };
+
+// greet.call(user1, "Hello", "!");
+// greet.call(user2, "Hi", ".");
+
+// Borrow method ****************
+// const animal = {
+//   type: "Dog",
+//   describe() {
+//     console.log(`I am a ${this.type}`);
+//   },
+// };
+// const cat = { type: "cat" };
+
+// animal.describe.call(cat);
+
+// Concept 7 — apply()******************
+// Same as call() but arguments passed as an array:
