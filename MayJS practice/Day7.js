@@ -214,7 +214,7 @@
 //   },
 // };
 // const fn = car.getBrand;
-// console.log(car.getBrand()); // Q2a getBrand
+// console.log(car.getBrand()); // Q2a toyota
 // console.log(fn()); // Q2b undefined bcz of there is not object before .
 
 // Q3 — Fix with arrow function
@@ -301,4 +301,24 @@
 // account.deposit(500);
 // account.withdraw(200);
 // console.log(account.getInfo()); // "owner: Ali, balance: 1300"
-//  Q8 : With help of Ai i did not understood this
+//  Q7 : With help of Ai i did not understood this
+
+// Q8 — explain in plain English
+// Why does this work:
+// const obj = {
+//   name: "Ali",
+//   greet() {
+//     setTimeout(() => {
+//       console.log(this.name); // "Ali" This work bcz of arrow function that borrow scope from surrounding.
+//     }, 1000);
+//   },
+// };
+// // But this does NOT work:
+// const obj2 = {
+//   name: "Ali",
+//   greet() {
+//     setTimeout(function () {
+//       console.log(this.name); // undefined And this regular gives error becuase of the this depends on how the function is called
+//     }, 1000);
+//   },
+// };
