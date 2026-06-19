@@ -207,12 +207,24 @@
 
 // Q2 — Lost context
 // What prints and why?
-const car = {
-  brand: "Toyota",
-  getBrand() {
-    return this.brand;
+// const car = {
+//   brand: "Toyota",
+//   getBrand() {
+//     return this.brand;
+//   },
+// };
+// const fn = car.getBrand;
+// console.log(car.getBrand()); // Q2a getBrand
+// console.log(fn()); // Q2b undefined bcz of there is not object before .
+
+// Q3 — Fix with arrow function
+// This has a this bug — fix it using arrow function
+const counter = {
+  count: 0,
+  start() {
+    setInterval(function () {
+      this.count++;
+      console.log(this.count);
+    }, 1000);
   },
 };
-const fn = car.getBrand;
-console.log(car.getBrand()); // Q2a
-console.log(fn()); // Q2b
