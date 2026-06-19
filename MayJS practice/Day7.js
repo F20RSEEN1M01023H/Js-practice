@@ -219,12 +219,50 @@
 
 // Q3 — Fix with arrow function
 // This has a this bug — fix it using arrow function
-const counter = {
-  count: 0,
-  start() {
-    setInterval(function () {
-      this.count++;
-      console.log(this.count);
-    }, 1000);
-  },
-};
+// const counter = {
+//   count: 0,
+//   start() {
+//     setInterval(() => {
+//       this.count++;
+//       console.log(this.count);
+//     }, 1000);
+//   },
+// };
+// counter.start();
+
+// // Q4 — call and apply
+// function introduce(city, country) {
+//   console.log(`${this.name} from ${city}, ${country}`);
+// }
+// const user = { name: "Ali" };
+
+// // Call using call()
+// introduce.call(user, "Rahim Yar Khan", "Pakistan");
+// // Call using apply()
+// introduce.apply(user, ["Rahim Yar Khan", "Pakistan"]);
+// const argsUser = ["Rahim Yar Khan", "Pakistan"];
+// introduce.apply(user, argsUser);
+// // Both should print: "Ali from Lahore, Pakistan"
+
+// Q5 — bind
+// Fix this lost context using bind
+// const restaurant = {
+//   name: "Lahori Karahi",
+//   getMenu() {
+//     console.log(`${this.name}'s menu`);
+//   },
+// };
+// const getMenu = restaurant.getMenu.bind({ name: "Lahori Karahi" });
+// getMenu(); // undefined's menu — fix this with bind
+
+// Q6 — Tricky — predict output
+function showName() {
+  console.log(this.name);
+}
+const obj1 = { name: "Ali", show: showName };
+const obj2 = { name: "Sara", show: showName };
+
+obj1.show(); // Q6a Ali
+obj2.show(); // Q6b Sara
+obj1.show.call(obj2); // Q6c Sara
+obj2.show.bind(obj1)(); // Q6d Ali
