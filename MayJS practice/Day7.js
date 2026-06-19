@@ -151,13 +151,68 @@
 
 // Concept 8 — bind()
 
-function greet() {
-  console.log(`Hello ${this.name}!`);
-}
-const user = { name: "Hammad" };
+// function greet() {
+//   console.log(`Hello ${this.name}!`);
+// }
+// const user = { name: "Hammad" };
 
-const boundGreet = greet.bind(user);
-boundGreet();
+// const boundGreet = greet.bind(user);
+// boundGreet();
 
-const rebind = boundGreet.bind({ name: "Hammad Ashraf now" });
-rebind();
+// const rebind = boundGreet.bind({ name: "Hammad Ashraf now" });
+// rebind();
+
+// const timer = {
+//   message: "Done!",
+//   start() {
+//     setTimeout(
+//       function () {
+//         console.log(this.message);
+//       }.bind(this),
+//       1000,
+//     ); // bind this (timer) to the callback
+//     // "Done!" ✅
+//   },
+// };
+
+// // bind with partial arguments — currying-like
+// function multiply(a, b) {
+//   return a * b;
+// }
+// const double = multiply.bind(null, 2); // a is permanently 2
+// console.log(double(5)); // 10
+// console.log(double(8)); // 16
+
+// ******************************* Solved Functions ****************************
+
+// Q1 — Predict output, explain each
+// const person = {
+//   name: "Ali",
+//   regular() {
+//     console.log(this.name); // Q1a Ali
+//   },
+//   arrow: () => {
+//     console.log(this.name); // Q1b undefined bcz arrow borrow this from surrounding scope
+//   },
+//   outer() {
+//     const inner = () => {
+//       console.log(this.name); // Q1c Ali
+//     };
+//     inner();
+//   },
+// };
+// person.regular();
+// person.arrow();
+// person.outer();
+
+// Q2 — Lost context
+// What prints and why?
+const car = {
+  brand: "Toyota",
+  getBrand() {
+    return this.brand;
+  },
+};
+const fn = car.getBrand;
+console.log(car.getBrand()); // Q2a
+console.log(fn()); // Q2b
