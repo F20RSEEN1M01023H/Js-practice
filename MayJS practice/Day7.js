@@ -256,13 +256,49 @@
 // getMenu(); // undefined's menu — fix this with bind
 
 // Q6 — Tricky — predict output
-function showName() {
-  console.log(this.name);
-}
-const obj1 = { name: "Ali", show: showName };
-const obj2 = { name: "Sara", show: showName };
+// function showName() {
+//   console.log(this.name);
+// }
+// const obj1 = { name: "Ali", show: showName };
+// const obj2 = { name: "Sara", show: showName };
 
-obj1.show(); // Q6a Ali
-obj2.show(); // Q6b Sara
-obj1.show.call(obj2); // Q6c Sara
-obj2.show.bind(obj1)(); // Q6d Ali
+// obj1.show(); // Q6a Ali
+// obj2.show(); // Q6b Sara
+// obj1.show.call(obj2); // Q6c Sara
+// obj2.show.bind(obj1)(); // Q6d Ali
+
+// Q7 — Real world
+// Build an object 'bankAccount' with:
+// owner — string (private via closure or just property)
+// balance — starts at 0
+// deposit(amount) — adds to balance, uses this
+// withdraw(amount) — subtracts, check sufficient funds, uses this
+// getInfo() — returns "owner: X, balance: Y" using this
+
+// function bankAccount(owner, balance = 0) {
+//   return {
+//     owner,
+//     balance,
+
+//     deposit(amount) {
+//       this.balance += amount;
+//     },
+
+//     withdraw(amount) {
+//       if (amount > this.balance) {
+//         console.log("Insufficient fund");
+//         return;
+//       }
+//       this.balance -= amount;
+//     },
+//     getInfo() {
+//       return `owner:${this.owner}, balance:${this.balance}`;
+//     },
+//   };
+// }
+
+// const account = bankAccount("Ali", 1000);
+// account.deposit(500);
+// account.withdraw(200);
+// console.log(account.getInfo()); // "owner: Ali, balance: 1300"
+//  Q8 : With help of Ai i did not understood this
